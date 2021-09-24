@@ -1,4 +1,4 @@
-TNPG: MAX swag (Anjini, Xinqing, Micheal)
+TNPG: MAX swag (Anjini, Xinqing, Michael)
 APCS
 HW 03 -- Codify the Revisions (revised version of binary algos)
 2021-09-23
