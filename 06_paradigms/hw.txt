@@ -5,10 +5,7 @@ HW06 -- "Hello, World!" in Scheme, NetLogo, and Python
 
 Scheme: "Hello, World!"
 
-NetLogo: 
-to helloworld
-  write "Hello, World!"
-end
+NetLogo: write "Hello, World!"
 
 Python: print ("Hello, World!")
 
@@ -16,6 +13,5 @@ Similarities:
 - The message has to be in quotes.
 
 Differences:
-- NetLogo requires the command to be in a procedure. 
 - Scheme doesn't require a keyword like write (for NetLogo) or print (for Python)
 - Python requires parentheses around the message. 
