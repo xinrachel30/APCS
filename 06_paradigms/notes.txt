@@ -1,0 +1,11 @@
+Xinqing Lin
+APCS
+HW06 -- "Hello, World!" in Scheme, NetLogo, and Python
+2021-09-28
+
+Similarities: 
+- The message ("Hello, World!") has to be in quotes.
+- There has to be a keyword before the message.
+
+Differences:
+- NetLogo doesn't need parentheses like the other two.
