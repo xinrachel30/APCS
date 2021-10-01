@@ -1,13 +1,16 @@
 public class Greet {
 	public static void main(String[] args){
 		System.out.println("No hablo queso");
-		greet("Success");
+		greet("Horse");
+		greet("Duck");
+		greet("Friend");
 	}
 	
 	public static void greet(String x){
-		System.out.println(x);
+		System.out.println("Good morning, " + x + ". How are you?");
 }
 }
 /*
-What does hardcoded mean? Persons of interest?
+DISCOVERIES: The "public static" before "void greet" is necessary for the method to work. Also, you need to put a variable name after String to be able to use the parameter. 
+UNRESOLVED QUESTIONS: How do you get just one greeting as the output? Would you need to randomize the three names?
 */
