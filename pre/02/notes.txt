@@ -1,0 +1,2 @@
+Remember that you have to specify the variable type before you initialize it. 
+java.util.Scanner provides methods that can be used to receive input.
