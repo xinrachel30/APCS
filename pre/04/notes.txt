@@ -1,0 +1,2 @@
+If a method is returning a boolean value, you can put return and the conditional statements in the same line.
+When writing recursive functions, begin by finding the base case. Then, find how two consecutive outputs differ from each other. 
