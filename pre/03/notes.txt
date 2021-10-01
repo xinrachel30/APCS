@@ -1,0 +1,1 @@
+When reading code, always start by looking for the main method. Look the code for other methods when they are brought up in the code that you are currently reading. 
