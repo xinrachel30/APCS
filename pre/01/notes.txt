@@ -1,0 +1,6 @@
+Note the general format of the main method: 
+public class <name>{
+      public static void main(String[] args){
+          
+      }
+}
