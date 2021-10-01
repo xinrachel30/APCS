@@ -1,0 +1,2 @@
+For for loops, remember to put the initialization, conditional, and iteration in parentheses. Separate each component using a semicolon. 
+Also, remember to declare the variable before its initialization in the for loop. It won't work otherwise.
