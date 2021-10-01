@@ -1,1 +1,3 @@
-I had a hard time understanding this one. 
+In determining whether you use a while loop or a for loop, question if you need the index. If the index is needed, it's better to go with while loops.
+
+I had a hard time understanding the rules regarding the variable types that the different methods needed, which is why some of the lines of code are in comments. I'm not sure when you can convert from one type to another. 
