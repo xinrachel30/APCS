@@ -1,0 +1,7 @@
+error: cannot find symbol
+	BigSib.greet("Flim");
+	^
+  symbol:   variable BigSib
+  location: class Greet
+
+fix: You forgot to make a class file for the java file. Use javac <file_name>.
