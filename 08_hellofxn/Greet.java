@@ -1,3 +1,10 @@
+/* 
+Xinqing Lin
+APCS
+HW08 -- Greeting 3 People
+2021-9-30
+*/
+
 public class Greet {
 	public static void main(String[] args){
 		System.out.println("No hablo queso");
