@@ -5,3 +5,8 @@ error: cannot find symbol
   location: class Greet
 
 fix: You forgot to make a class file for the java file. Use javac <file_name>.
+
+---
+error: non-static variable helloMsg cannot be referenced from a static context
+
+fix: Delete the static in the methods referencing helloMsg. 
