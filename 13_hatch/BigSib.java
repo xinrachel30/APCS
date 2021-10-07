@@ -1,6 +1,5 @@
 public class BigSib {
     public String helloMsg;
-    private String name;
     public BigSib(){
       helloMsg = "Word up";
     }
