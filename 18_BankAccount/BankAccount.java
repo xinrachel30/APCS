@@ -5,7 +5,7 @@ HW18 -- <CPA-One/Bank Account Java/Summary>
 */
 
 public class BankAccount{
-	private static String accHolderName;
+	 private static String accHolderName;
 	private static String password;
 	private static int pin;
 	private static int accNumber;
