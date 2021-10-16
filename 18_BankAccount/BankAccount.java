@@ -15,7 +15,7 @@ How does PerryThePlatypus.accDetails(params) work?
 Q2: Before we write a constructor, we can make an instance variable using "BankAccount Perry = new BankAccount();"
 We know that there is a default constructor because we can successfully make an instance without any arguments.
 
-Q3: You can get the string representation using "System.out.println(object);
+Q3: You can get the string representation using "System.out.println(object);".
 */
 
 public class BankAccount{
