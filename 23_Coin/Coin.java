@@ -1,29 +1,26 @@
 /***
- TNPG: Blue Sushi (Lawrence Joa and Xinqing Lin)
+ Blue Sushi - Lawrence Joa, Xinqing Lin
  APCS
- HW23 -- What does Equality Look like?/Using Random()
- 21-10-23
- *  class Coin
- *  by Clyde "Thluffy" Sinclair
- *  SKELETON
-
- DISCO:
+ HW23 -- What Does Equality Look Like? / Coding Coin & Driver files
+ 2021-10-22
+ time spent: 1.5 hours
+ DISCO
  Math.random() provides a value in the interval [0.0, 1.0). We can use Math.random() in problems involving probability.
-
- QCC:
- How should we set the value for bias?
+ QCC
+ How or when are we supposed to use reset(str, str)?
  ***/
 
-public class Coin {
-  private double value;
-  private String upFace;
-  private String name;
-  private int flipCtr;
-  private int headsCtr;
-  private int tailsCtr;
-  private double bias;
-  //attributes aka instance vars
+import java.util.*;
 
+public class Coin {
+  //attributes aka instance vars
+  double value;
+  String upFace = "heads";
+  String name;
+  int flipCtr;
+  int headsCtr;
+  int tailsCtr;
+  double bias = 0.5;
 
 
   /***
@@ -32,7 +29,7 @@ public class Coin {
    *  postcond:
    ***/
   public Coin() {
-  	upFace = "heads";
+
   }
 
 
@@ -49,7 +46,6 @@ public class Coin {
   ***/
   public Coin( String s ) {
   	name = s;
-    upFace = "heads";
   }
 
 
@@ -72,19 +68,19 @@ public class Coin {
   }
 
   public int getFlipCtr() {
-	return flipCtr;
+	   return flipCtr;
   }
 
   public double getValue() {
-	return value;
+	   return value;
   }
 
   public int getHeadsCtr() {
-	return headsCtr;
+	   return headsCtr;
   }
 
   public int getTailsCtr() {
-	return tailsCtr;
+  	return tailsCtr;
   }
   // ----------------------------
 
@@ -96,25 +92,25 @@ public class Coin {
    * Returns value assigned.
    ***/
   private double assignValue( String s ) {
-	if(s=="penny"){
-		value=0.01;
-	}
-	if(s=="nickel"){
-		value=0.05;
-	}
-	if(s=="dime"){
-		value=0.10;
-	}
-	if(s=="quarter"){
-		value = 0.25;
-	}
-	if(s=="half dollar"){
-		value = 0.50;
-	}
-	if(s=="dollar"){
-		value = 1.00;
-	}
-	return value;
+  	if(s=="penny"){
+  		value=0.01;
+  	}
+  	if(s=="nickel"){
+  		value=0.05;
+  	}
+  	if(s=="dime"){
+  		value=0.10;
+  	}
+  	if(s=="quarter"){
+  		value = 0.25;
+  	}
+  	if(s=="half dollar"){
+  		value = 0.50;
+  	}
+  	if(s=="dollar"){
+  		value = 1.00;
+  	}
+  	return value;
   }
 
 
@@ -124,11 +120,13 @@ public class Coin {
       postcond: Coin's attribs reset to starting vals
   ***/
   public void reset( String s, double d ) {
-		upFace = s;
-		bias = 0.5;
-    flipCtr = 0;
-    headsCtr = 0;
-    tailsCtr = 0;
+    double value = 0.0;
+    upFace = s;
+    name = "";
+    bias = 0.5;
+    headsCtr=0;
+    tailsCtr=0;
+    flipCtr=0;
   }
 
 
@@ -142,20 +140,17 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
-  	double result = Math.random();
-    System.out.println(bias);
-    System.out.println(result);
-    flipCtr ++;
+    double result = Math.random();
+    flipCtr++;
     if (result >= bias) {
-      tailsCtr ++;
-      upFace = "tails";
-      return upFace;
-    }
-    else {
       headsCtr ++;
       upFace = "heads";
-      return upFace;
-  	}
+    }
+    else {
+      tailsCtr ++;
+      upFace = "tails";
+    }
+    return upFace;
   }
 
 
@@ -180,8 +175,8 @@ public class Coin {
    * precond: n/a
    * postcond: Return String comprised of name and current face
    ***/
-  public String toString() {
-		return name + " -- " + upFace;
-  }
+   public String toString() {
+     return name + " -- " + upFace;
+   }
 
 }//end class
