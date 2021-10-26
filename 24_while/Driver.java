@@ -26,8 +26,8 @@
 		yours.flip();
     wayne.flip();
 		}
-  System.out.println(yours.headsCtr);
-  System.out.println(wayne.headsCtr);
+  System.out.println("test 1:\n your head count: " + yours.headsCtr);
+  System.out.println("wayne's head count: " + wayne.headsCtr);
 	yours.reset("heads", 0.5);
   wayne.reset("heads", 0.5);
 
@@ -39,7 +39,7 @@
       match++;
     }
 	}
-  System.out.println(match);
+  System.out.println("test 2:\n number of matches: " + match);
 	yours.reset("heads", 0.5);
 	wayne.reset("heads", 0.5);
 	 int match2 = 0;
@@ -50,7 +50,7 @@
       match2++;
 		}
   }
-  System.out.println(match2);
+  System.out.println("test 3:\n number of matches: " + match2);
   }//end main()
 
 }//end class
