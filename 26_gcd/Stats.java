@@ -16,18 +16,15 @@ by subtracting the smaller input from it. Repeat process until a equals b. Then 
 public class Stats {
 
   public static int gcd( int a, int b) {
-    int i;
-    while (a != b) {
-      if (a > b) {
-        i = a;
-
+    int i = 1;
+    int ans = 1;
+    while (i <= a && i <= b) {
+      if (a%i == 0 && b%i == 0) {
+        ans = i;
       }
-      else {
-        i = b;
-      }
-      i
+      i++;
     }
-    return i;
+    return ans;
   }
 
 //spent too much time; can't spend more because of other homework
