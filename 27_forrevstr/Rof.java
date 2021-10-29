@@ -1,5 +1,5 @@
 /**
-Team Green Ice Cream (Ivina Wang, Xinqing Lin, Max Schneider)
+Team Green Ice Cream (Ivina Wang, Xinqing Lin, Michael Kamela)
 APCS
 HW27 -- FOR the Love of Strings / Using s.substring() and s.length() from the AP Subset
 2021-10-28
