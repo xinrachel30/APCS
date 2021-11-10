@@ -78,7 +78,7 @@ public class Pig {
     precondition: letter.length() == 1
     **/
   public static boolean isAVowel( String letter ) {
-    return VOWELS.indexOf( letter ) != -1;
+    return VOWELS.indexOf( letter.toLowerCase() ) != -1;
   }
 
 
@@ -173,12 +173,18 @@ public class Pig {
 
     String ans = "";
 
-    if ( beginsWithVowel(w) )
+    if ( beginsWithVowel(w) ){
       ans = w + "way";
-
+    }
     else {
+      if( beginsWithUpper(w)){
+	int vPos = w.indexOf( firstVowel(w) );
+	ans = w.substring(vPos,vPos+1).toUpperCase() + (w.substring(vPos+1) + w.substring(0, vPos) + "ay").toLowerCase();
+      }
+      else{
       int vPos = w.indexOf( firstVowel(w) );
       ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
+      }
     }
 
     return ans;
