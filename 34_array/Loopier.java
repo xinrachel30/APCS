@@ -1,20 +1,23 @@
 /*
 Kleemex -- Lindsay Phung, May Qiu, and Xinqing Lin
 APCS
-HW34 -- A Pirate's Life for Me / populating, stringing, and returning the index of the first occurence of a target & frequency of target in an array of ints
+HW34 -- A Pirate's Life for Me / populating, stringing, and returning the index of the first occurence & frequency of target in an array of ints
 2021-11-13
 time spent: 1.5 hrs
 
 DISCO:
 - You can reference a specific value in an array using arrayName[index]
 - When 'println' an array, system outputs [I@41a4555e]. Based on the Think Java reading, the I stands for integer and the following represents the "address of the array in memory"
-- Recursion is said to appeal to some due to its 'concise' way of calling a method in its body whileas the iteritive utilizes loops
+- Another way to have a string version of an array of ints (found in Think Java) is to import 'java.util.Arrays' from the Java library and print 'Arrays.toString([array name])'
+- a.length is a constant (NO PARENTHESES OR ARGUMENTS) unlike String.length(), which is a method
+- Recursion is said to appeal to some due to its 'concise' way of calling a method in its body whereas the iterative utilizes loops
 
 QCC:
 - linSearchR finds the index of the last instance of target, not the first
-- freqRec currently unfinished
-- Whileas it is easier to imagine the recursive route, actually putting it in code proves to be much more challenging
+- Whereas it is easier to imagine the recursive route, actually putting it in code proves to be much more challenging
 */
+
+import java.util.Arrays;
 
 public class Loopier {
 
@@ -69,7 +72,7 @@ public class Loopier {
       if (a[a.length - 1] == target) {
           return a.length - 1;
       }
-      int[] newA = new int[a.length - 1];
+      int[] newA = new int [a.length - 1];
       for (int i = 0; i < a.length - 1; i++) {
           newA[i] = a[i];
       }
@@ -97,7 +100,7 @@ public class Loopier {
     }
     else {
       int [] b = new int [a.length-1];
-      for (int i = 0; i < a.length; i++) {
+      for (int i = 0; i < a.length-1 ; i++) {
         b[i] = a[i];
       }
       if (a[a.length-1] == target) {
@@ -114,9 +117,14 @@ public class Loopier {
     int[] test2 = {2, 4, 8, 4, 2};
     populateArray(test);
     System.out.println(versionString(test));
+    System.out.println(Arrays.toString(test));
     System.out.println(linSearch(test, 4));
     System.out.println(linSearchR(test2, 4));
     System.out.println(freq(test, 4));
-    System.out.println(freqRec(test, 4));
+    System.out.println(freqRec(test2, 4));
   }
 }
+
+
+
+
