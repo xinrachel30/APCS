@@ -69,15 +69,41 @@ public class Loopier {
         return -1;
     }
     else {
-      if (a[a.length - 1] == target) {
-          return a.length - 1;
+      if (a[0] == target) {
+        return 0;
       }
       int[] newA = new int [a.length - 1];
-      for (int i = 0; i < a.length - 1; i++) {
-          newA[i] = a[i];
+      for (int i = 1; i < a.length; i++) {
+          newA[i - 1] = a[i];
       }
-      return linSearchR(newA, target);
+      int ret = linSearchR(newA, target);
+      if (ret == -1) return -1;
+      return 1 + ret;
     }
+  }
+
+  public static int smart(int[] a, int target) {
+    if (a[0] == target) return 0;
+    if (a.length == 1) return -1;
+
+    int[] newA = new int [a.length - 1];
+    for (int i = 1; i < a.length; i++) {
+        newA[i - 1] = a[i];
+    }
+
+    int ret = smart(newA, target);
+    if (ret == -1) return ret;
+    return 1 + ret;
+  }
+
+  public static int linearR(int[] a, target) {
+    return smarter(a, target, 0);
+  }
+
+  public static int smarter(int[] a, int target, int index) {
+    if (index >= a.length) return -1;
+    if (a[index] == target) return index;
+    return smarter(a, target, index + 1);
   }
 
   public static int freq (int[] a, int target) {
