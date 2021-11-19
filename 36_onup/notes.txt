@@ -1,0 +1,21 @@
+Xinqing Lin
+APCS
+HW36 -- All Quacked up / Appendix D of ThinkJava
+2021-11-18
+
+Compile-Time Errors: Syntax Errors
+    - Incremental Development: helps find location of error quickly
+    - Fix only the first error message
+    - Desperate measure: make a backup file and debug by bisection. Also helps track down location of error.
+    - Compiler remedies are not reliable
+
+Run-Time Errors: Errors while Running
+    - Use temporary print statements to display variable & param values and help debug
+    - Use smaller test cases and methods. Organize code and make it more readable.
+
+Logic Errors: Program Doesn't Behave as Expected
+    - Using flow of execution, make sure every section works as intended
+    - Rewrite code to be more readbale, perhaps by using temp variables
+    - Talk to friend/duckie about the error
+    - Try changing print -> println
+    - Learn from finding bugs
