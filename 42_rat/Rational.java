@@ -57,7 +57,7 @@ public class Rational {
         this.denominator = this.denominator * a.numerator;
       }
   }
-
+  /*
   public static int lcm(int d1, int d2) {  // one way of implementing lcm
     int lcm = 0;
     if (gcd(d1, d2) == 1) {
@@ -81,7 +81,7 @@ public class Rational {
     }
     return lcm;
   }
-
+*/
 /*
   public static int lcm(int d1, int d2) {  // another way of implementing lcm
   int lcm;
@@ -100,6 +100,10 @@ public class Rational {
   return lcm;
 }
 */
+
+public static int lcm(int d1, int d2) {
+  return d1 * d2 / gcd(d1, d2);
+}
 
   public void add(Rational a) {
     int lcm = lcm(this.denominator, a.denominator);
@@ -251,5 +255,7 @@ public class Rational {
     System.out.println("4/6 compared to 2/3: " + x.compareTo(z));
 
     System.out.print("---------------- \n");
+
+    System.out.println(lcm(24, 27));
  }
 }
