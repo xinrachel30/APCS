@@ -7,7 +7,8 @@
 // - _size of an array is the number of meaningful values, not the number of available spaces.
 //
 // QCC
-// -
+// - Why do we write expand() instead of _data.expand() in add-at-index?
+// Idea: The dot operator is only used to reference a method or an instance variable from a class or an instance of a class. Also, expand() directly changes _data.
 
 /***************************
  * class SuperArray version 2.0
@@ -128,12 +129,14 @@ public class SuperArray
   public static void main( String[] args )
   {
       SuperArray curtis = new SuperArray();
+      System.out.print( "---------------- \n");
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
 
       for( int i = 0; i < curtis._data.length; i++ ) {
       curtis.set( i, i * 2 );
       }
+      System.out.print( "---------------- \n");
       System.out.println("Printing populated SuperArray curtis...");
       System.out.println(curtis);
       for( int i = 0; i < 3; i++ ) {
@@ -144,36 +147,46 @@ public class SuperArray
       + curtis._data.length );
     }
 
-      SuperArray mayfield = new SuperArray();
-      System.out.println("Printing empty SuperArray mayfield...");
-      System.out.println(mayfield);
+    SuperArray mayfield = new SuperArray();
+    System.out.print( "---------------- \n");
+    System.out.println("Printing empty SuperArray mayfield...");
+    System.out.println(mayfield);
 
-      mayfield.add(5);
-      mayfield.add(4);
-      mayfield.add(3);
-      mayfield.add(2);
-      mayfield.add(1);
+    mayfield.add(5);
+    mayfield.add(4);
+    mayfield.add(3);
+    mayfield.add(2);
+    mayfield.add(1);
 
-      System.out.println("Printing populated SuperArray mayfield...");
-      System.out.println(mayfield);
+    System.out.print( "---------------- \n");
+    System.out.println("Printing populated SuperArray mayfield...");
+    System.out.println(mayfield);
 
-      mayfield.remove(3);
-      System.out.println("Printing SuperArray mayfield post-remove...");
-      System.out.println(mayfield);
-      mayfield.remove(3);
-      System.out.println("Printing SuperArray mayfield post-remove...");
-      System.out.println(mayfield);
+    System.out.print( "---------------- \n");
+    mayfield.remove(3);
+    System.out.println("Printing SuperArray mayfield post-remove...");
+    System.out.println(mayfield);
+    System.out.print( "---------------- \n");
+    mayfield.remove(3);
+    System.out.println("Printing SuperArray mayfield post-remove...");
+    System.out.println(mayfield);
 
-      mayfield.add(3,99);
-      System.out.println("Printing SuperArray mayfield post-insert...");
-      System.out.println(mayfield);
-      mayfield.add(2,88);
-      System.out.println("Printing SuperArray mayfield post-insert...");
-      System.out.println(mayfield);
-      mayfield.add(1,77);
-      System.out.println("Printing SuperArray mayfield post-insert...");
-      System.out.println(mayfield);
-      System.out.println(mayfield.size());
+    System.out.print( "---------------- \n");
+    mayfield.add(3,99);
+    System.out.println("Printing SuperArray mayfield post-insert...");
+    System.out.println(mayfield);
+
+    System.out.print( "---------------- \n");
+    mayfield.add(2,88);
+    System.out.println("Printing SuperArray mayfield post-insert...");
+    System.out.println(mayfield);
+    System.out.println("Printing SuperArray mayfield post-insert...");
+    System.out.print( "---------------- \n");
+    mayfield.add(1,77);
+    System.out.println("Printing SuperArray mayfield post-insert...");
+    System.out.println(mayfield);
+    System.out.println(mayfield.size());
+    System.out.print( "---------------- \n");
       /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
