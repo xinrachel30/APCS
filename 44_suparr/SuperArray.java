@@ -1,7 +1,13 @@
-// Clyde "Thluffy" Sinclair
-// APCS1 pd0
-// HW44 -- expanding SuperArray functionality, encapsulation
-// 2021-12-08w
+// Kleemex -- Lindsay Phung, May Qiu, Xinqing Lin
+// APCS1 pd7
+// HW44 -- Array of Grade 316 / expanding SuperArray functionality, encapsulation
+// 2021-12-07
+//
+// DISCO
+// - _size of an array is the number of meaningful values, not the number of available spaces.
+//
+// QCC
+// -
 
 /***************************
  * class SuperArray version 2.0
@@ -68,6 +74,7 @@ public class SuperArray
   {
     int temp = _data[index];
     _data[index] = newVal;
+    _size++;
     return temp;
   }
 
@@ -75,14 +82,25 @@ public class SuperArray
   //adds an item after the last item
   public void add( int newVal )
   {
-    /* YOUR IMPLEMENTATION HERE */
+    if (_size + 1 > _data.length) {
+      expand();
+    }
+    _data[_size] = newVal;
+    _size++;
   }
 
 
   //inserts an item at index
   public void add( int index, int newVal )
   {
-    /* YOUR IMPLEMENTATION HERE */
+    if (_size + 1 > _data.length) {
+      expand();
+    }
+    _size++;
+    for (int i = _size; i > index; i--){ // moves values to the right, starting with the rightmost value
+      _data[i] = _data[i - 1];
+    }
+    _data[index] = newVal;
   }
 
 
@@ -90,14 +108,18 @@ public class SuperArray
   //shifts elements left to fill in newly-empted slot
   public void remove( int index )
   {
-    /* YOUR IMPLEMENTATION HERE */
+    for (int i = index; i < _size - 1; i++) { // moves values to the left, starting with the leftmost value
+      _data[i] = _data[i + 1];
+    }
+    _data[_size] = 0;
+    _size--;
   }
 
 
   //return number of meaningful items in _data
   public int size()
   {
-    /* YOUR IMPLEMENTATION HERE */
+    return _size;
   }
 
 
@@ -105,10 +127,10 @@ public class SuperArray
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       SuperArray curtis = new SuperArray();
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
+
       for( int i = 0; i < curtis._data.length; i++ ) {
       curtis.set( i, i * 2 );
       }
@@ -120,23 +142,28 @@ public class SuperArray
       System.out.println(curtis);
       System.out.println("new length of underlying array: "
       + curtis._data.length );
-      }
+    }
+
       SuperArray mayfield = new SuperArray();
       System.out.println("Printing empty SuperArray mayfield...");
       System.out.println(mayfield);
+
       mayfield.add(5);
       mayfield.add(4);
       mayfield.add(3);
       mayfield.add(2);
       mayfield.add(1);
+
       System.out.println("Printing populated SuperArray mayfield...");
       System.out.println(mayfield);
+
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
+
       mayfield.add(3,99);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
@@ -146,6 +173,8 @@ public class SuperArray
       mayfield.add(1,77);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
+      System.out.println(mayfield.size());
+      /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
 
