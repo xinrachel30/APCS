@@ -1,16 +1,17 @@
 /*
 Kleemex -- Lindsay Phung, May Qiu, Xinqing Lin
 APCS Pd 7
-HW42 -- Be More Rational
-2021-12-04
-time spent: 1.33 hr
+HW49 -- Rational Standards Compliance
+2021-12-22
+time spent: 1 hr
 
 DISCO:
+- We can use instanceof to see if an object is an instance of a class
+- We can use throw to send an exception error
+- We can typecast using (objectName)anotherObject
 
 QCC:
-- We can use this.[variableName] to make code more readable
-- Is there a more efficient way of making test cases?
-- Adding parentheses to lines of code with many operations makes code more readable
+-
 
 */
 
@@ -146,8 +147,12 @@ public static int lcm(int d1, int d2) {
   }
 
   public int compareTo(Object o) {
-    
-    Rational a = (Rational)o;
+
+    if (!(o instanceof Rational)) {
+      throw new ClassCastException("\n compareTo() input not a Rational");
+    }
+    Rational a = (Rational) o;
+
     int mynum = this.numerator;
     int anum = a.numerator;
     if (this.denominator != a.denominator) {
@@ -164,6 +169,26 @@ public static int lcm(int d1, int d2) {
     else {
       return -1;
     }
+  }
+
+  public boolean equals(Object o) {
+
+    if (!(o instanceof Rational)) {
+      throw new ClassCastException("\n compareTo() input not a Rational");
+    }
+    Rational a = (Rational)o;
+
+    int mynum = this.numerator;
+    int anum = a.numerator;
+    if (this.denominator != a.denominator) {
+      int lcm = lcm(this.denominator, a.denominator);
+      mynum = this.numerator * lcm / this.denominator;
+      anum = a.numerator * lcm / a.denominator;
+    }
+    if (mynum == anum) {
+      return true;
+    }
+    return false;
   }
 
   public static void main(String [] args){
