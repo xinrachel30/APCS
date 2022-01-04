@@ -15,7 +15,7 @@ QCC:
 
 */
 
-public class Driver {w
+public class Driver {
 
 	public static void main(String[] args) {
 		String s = "random";
