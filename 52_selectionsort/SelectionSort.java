@@ -2,24 +2,29 @@
 // APCS pd7
 // HW52 -- Selection, Natch / implementing selection sort
 // 2022-01-04
-// time spent:  hrs
+// time spent: 1 hr
 
 /******************************
  *   class SelectionSort -- implements SelectionSort algorithm
  *
  * ALGO:
+ * For every pass, it finds the index of the greatest value by comparing the first data.size() - p elements.
+ * Using the index of the greatest value, it swaps the positions of the greatest value and the last value.
  *
  * DISCO
+ * - Copying over an ArrayList means to deep copy. You initialize an empty ArrayList and then .add() each element in the original ArrayList
+ *   into the new ArrayList.
  *
  * QCC
  * q0: How many passes to sort n elements?
- * a0:
+ * a0: n - 1 passes are required to sort n elements.
  * q1: What do you know after pass p?
- * a1:
+ * a1: After pass p, the last p elements are sorted in ascending order.
  * q2: How do you know if sorted?
- * a2:
+ * a2: When sorted, the ArrayList should be in ascending order.
  * q3: What does a pass boil down to?
- * a3:
+ * a3: It finds the index of the greatest value by comparing the first data.size() - p elements.
+       It swaps the positions of the greatest value and the last value.
  ******************************/
 
 
