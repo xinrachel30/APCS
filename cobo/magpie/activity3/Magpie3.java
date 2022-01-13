@@ -1,18 +1,19 @@
 /**
  * A program to carry on conversations with a human user.
- * This version: 
+ * This version:
  * <ul><li>
- *    Uses advanced search for keywords 
- * </li></ul> 
- *    
+ *    Uses advanced search for keywords
+ * </li></ul>
+ *
  * @author Laurie White
  * @version April 2012
  */
+
 public class Magpie3
 {
 	/**
 	 * Get a default greeting
-	 * 
+	 *
 	 * @return a greeting
 	 */
 	public String getGreeting()
@@ -22,7 +23,7 @@ public class Magpie3
 
 	/**
 	 * Gives a response to a user statement
-	 * 
+	 *
 	 * @param statement
 	 *            the user statement
 	 * @return a response based on the rules given
@@ -44,6 +45,28 @@ public class Magpie3
 				|| findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+    else if (findKeyword(statement, "dog") >= 0
+				|| findKeyword(statement, "cat") >= 0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement, "Mr. Mykolyk") >= 0)
+		{
+			response = "He is the #GUDFAM ring leader.";
+		}
+		else if (findKeyword(statement, "Lindsay") >= 0
+				|| findKeyword(statement, "Xinqing") >= 0)
+		{
+			response = "Oh em gee, those are the members of the best duo in 251.";
+		}
+		else if (findKeyword(statement, "251") >= 0)
+		{
+			response = "That's the best room in Stuy.";
+		}
+		else if (findKeyword(statement, "APCS") >= 0)
+		{
+			response = "What a great, nurturing AP class.";
 		}
 		else
 		{
@@ -122,7 +145,7 @@ public class Magpie3
 	 * is not a substring of a longer string (so, for
 	 * example, "I know" does not contain "no"). The search
 	 * begins at the beginning of the string.
-	 * 
+	 *
 	 * @param statement
 	 *            the string to search
 	 * @param goal
@@ -137,7 +160,7 @@ public class Magpie3
 
 	/**
 	 * Pick a default response to use if nothing else fits.
-	 * 
+	 *
 	 * @return a non-committal string
 	 */
 	private String getRandomResponse()
