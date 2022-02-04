@@ -1,0 +1,24 @@
+JINX - Xinqing Lin, Josiah Moltz, Nora Miller
+APCS pd6
+L05 -- pulling it together
+2022-02-03
+time spent: .9 hrs
+
+
+DISCO
+------------------------------------------------
+* ArrayLists are annoying when trying to add an element at an index beyond the value of size.
+================================================
+
+
+QCC
+------------------------------------------------
+* isLocalMode does not need to iterate through _frequency
+* In what world is it useful to do this the way that we are doing it?
+================================================
+
+
+MISC
+------------------------------------------------
+*
+================================================
