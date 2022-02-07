@@ -2,7 +2,7 @@
 // APCS pd6
 // L05 -- pulling it together
 // 2022-02-03
-// time spent:  hrs
+// time spent: .9 hrs
 
 
 /**
@@ -67,7 +67,7 @@ public class StatPrinter
   public StatPrinter( ArrayList <Integer> data )
   {
   //  _frequency = new ArrayList<Integer>( 5 );
-    _frequency = new ArrayList<Integer>();
+    _frequency = new ArrayList<Integer>();  // COULD be ArrayList<Integer>( max(data) ) to ensure we never expand
     for (int i = 0; i < max(data)+1; i++) {
       _frequency.add(0);  //makes sure _frequency is properly sized
     }
@@ -75,7 +75,7 @@ public class StatPrinter
     for ( Integer i : data ) {
       _frequency.set( i, _frequency.get(i) +1 ); // increases whatever's in that slot by one
     }
-  }
+  } // O(n)
 
 
   //*************** QUESTION 01 **************************
@@ -90,7 +90,7 @@ public class StatPrinter
       }
     }
     return maxValue;
-  }
+  } // O(n)
 
 
   //*************** QUESTION 03 **************************
@@ -111,7 +111,7 @@ public class StatPrinter
       return true;
     }
     return false;
-  }
+  } // O(1)
 
 
   //*************** QUESTION 04 **************************
@@ -126,8 +126,7 @@ public class StatPrinter
       }
     }
     return result;
-
-  }
+  } // O(n)
 
 
   //*************** QUESTION 05 **************************
@@ -142,7 +141,7 @@ public class StatPrinter
       }
       System.out.println(i + " : " + bars);
     }
-  }
+  } // O(n)
 
   //public static void
 

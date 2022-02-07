@@ -15,10 +15,12 @@ QCC
 ------------------------------------------------
 * isLocalMode does not need to iterate through _frequency
 * In what world is it useful to do this the way that we are doing it?
+* Why did we do this with ArrayList? It seems like it could have been done better with an Array
 ================================================
 
 
 MISC
 ------------------------------------------------
-*
+* Computing Big Oh was a bit confusing due to determining what exactly to look at.
+  We knew we had to look at the input variable, but there were many other factors affecting Time Complexity.
 ================================================
