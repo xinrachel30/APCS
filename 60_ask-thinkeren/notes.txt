@@ -1,0 +1,35 @@
+JINX - Xinqing Lin, Josiah Moltz, Nora Miller
+APCS pd6
+HW60: A Termite is-a Turtle, a Thinker is-a Turtle
+2022-02-07
+time spent: .5 hrs
+
+
+DISCO
+------------------------------------------------
+* The only way to tell if a deck is sorted is if its height is 1
+* There needs to be different instructions for receiving sorted and unsorted decks
+* A turtle can give or receive cards
+================================================
+
+
+QCC
+------------------------------------------------
+* There were two kinds of actions being taken during class: 1) Halving the deck and giving
+each half to 2 others and 2) taking one card and passing the rest of the deck back
+* The process wasn't very efficient because, at the end, people had difficulty
+remembering who they originally got the cards from
+* There was also difficulty in finding people to give cards to
+================================================
+
+
+THINKER FIRMWARE
+------------------------------------------------
+* If turtle receives an unsorted deck, split the deck and give it to 2 others
+* If turtle receives a sorted deck, give it back to the turtle it originally got
+cards from
+* If turtle is receiving two sorted decks:
+   Compare the first two cards in the decks
+   Place the smaller of the two in a stack (any card is smaller than no card)
+   Repeat for the first two cards in the decks
+================================================
