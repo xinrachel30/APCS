@@ -1,8 +1,8 @@
-Butterfingers {Fang Chen, Melody Lew, Corina Chen}
+CoffeeBeans: Melody Lew and Xinqing Lin
 apcs pd06
-HW 60 -- A Termite is-a Turtle, a Thinker is-a Turtle
-2022-02-08
-time spent: 0.5 hr
+HW61 -- Instructions so Simple...
+2022-02-09
+time spent: 2.0 hrs
 
 =========================
 Reflection & Observables
@@ -32,17 +32,12 @@ for sorting lists?
 =========================
 THINKER FIRMWARE
 =========================
-0: All turtles begin as termites.
-1: One termite is given a stack of cards, unsorted.
-2: Termite determines whether the stack of card is sorted.
-3: If unsorted (> 1 card), termite splits the stack of cards into two, hands
-each stack to a nearby termite, and becomes a thinker.
-4: If sorted (1 card), termite becomes a thinker and returns the sorted stack
-to the termite (now thinker) from whom the stack was retrieved.
-5: All termites with a stack follows 2-4 until there are no more termites with
-a stack of cards.
-6: Thinkers receive the two sorted stacks of card from the termites (now
-thinkers) and merges the decks effectively with the power of vision to sort.
-7: Thinkers with one sorted stack of cards will return the stack to the termite
-(now thinker) from whom the stack was retrieved.
-8: The thinker with the only stack of card has a sorted stack.
+Phase 1
+0: If a thinker receives an unsorted deck (height > 1), split the deck into two halves and give each to another thinker.
+1: If a thinker receives a sorted deck (height == 1), return the deck to the thinker it received the deck from.
+
+Phase 2
+2: If a thinker receives two sorted decks, place each deck with its lowest value card facing upwards.
+3: Compare the two cards facing upwards, take the one with the lower value, and place it face down on the table.
+4: Repeat until the two decks are merged into one
+5: Return this deck to the thinker you originally got cards from.
