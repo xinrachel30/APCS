@@ -1,0 +1,6 @@
+< ACTIVITY 1 >
+
+1a) public static double sentimentVal( String word )
+1b) The method requires a String parameter. If you try to pass a different type
+    of parameter (like an int), there will be a compile-time error.
+1c) The return type is a double.
