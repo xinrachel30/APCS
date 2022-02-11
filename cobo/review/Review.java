@@ -210,7 +210,7 @@ public class Review {
     while (review.indexOf("*") > -1) {
       int askeriskI = review.indexOf("*");
       int spaceI = review.indexOf(" ", askeriskI); //end index of to-be-deleted adjective
-      review = review.substring(0, askeriskI) + randomAdjective() + review.substring(spaceI);
+      review = review.substring(0, askeriskI) + randomNegativeAdj() + review.substring(spaceI);
     }
     return review;
   }
