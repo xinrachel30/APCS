@@ -177,7 +177,6 @@ public class Review {
       else {
         currentword += review.substring(i,i+1);
       }
-
     }
 
     totsentiment += sentimentVal(currentword);
@@ -185,22 +184,22 @@ public class Review {
     return totsentiment;
   }
 
-  public static int starRating (String fileName) {
-    double totsentiment = totalSentiment(fileName);
-    if (totsentiment <= -4) {
-      return 1;
+  public static int starRating(String fileName) {
+    double avg = totalSentiment(fileName) / textToString(fileName).split(" ").length; // positivity/negativity per word, on average
+    if (avg > .4) {
+      return 5;
     }
-    else if (totsentiment > -4 && totsentiment <= -2) {
-      return 2;
-    }
-    else if (totsentiment > 0 && totsentiment < 2) {
-      return 3;
-    }
-    else if (totsentiment >= 2 && totsentiment < 4) {
+    else if (avg > .2) {
       return 4;
     }
+    else if (avg > 0) {
+      return 3;
+    }
+    else if (avg > -.2) {
+      return 2;
+    }
     else {
-      return 5;
+      return 1;
     }
   }
 

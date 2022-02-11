@@ -1,8 +1,21 @@
-Xinqing Lin
+Jinx - Josiah Moltz, Nora Miller, Xinqing Lin
 APCS pd6
 HW63: Read/Review/Expand
 2021-02-10
 time spent: 1.5 hr + class time
+
+DISCO
+------------------------------------------------
+*
+================================================
+
+
+QCC
+------------------------------------------------
+* Why were these directions so... ambiguous? Would have liked more direction on starRating
+* How do we fill the positiveAdjectives.txt and negativeAdjectives.txt files (without doing it manually)?
+  We thought about using the redirector commands in terminal but it still doesn't seem clear what to do
+================================================
 
 < Activity 1 > ----------------------------------------------------------------
 
@@ -41,9 +54,9 @@ a 1 star, though.
   1) Adjust it so that certain punctuation (such as exclamation marks) amplify
 the direction of the sentiment. Negative reviews become more negative and
 positive reasons become more positive.
-  2) Make a helper method where the number of words are also considered.
-Reviews with less words would need more narrow thresholds.
+  2)
 
+  
 6) (a) The logical error is that the first conditional, totalSentiment < 15,
 makes the rest of the else if statements useless. For example, if the totalSentiment
 6, that means that it is < 15. This method will then return 4. However,
