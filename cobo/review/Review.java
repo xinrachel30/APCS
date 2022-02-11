@@ -164,10 +164,75 @@ public class Review {
   }
 
   public static double totalSentiment(String fileName) {
-    
+    String review = textToString(fileName);
+    review = removePunctuation(review);
+    double totsentiment = 0;
+    String currentword = "";
+
+    for (int i = 0; i < review.length(); i++) {
+      if (review.substring(i,i+1).equals(" ")) {
+        totsentiment += sentimentVal(currentword);
+        currentword = "";
+      }
+      else {
+        currentword += review.substring(i,i+1);
+      }
+
+    }
+
+    totsentiment += sentimentVal(currentword);
+
+    return totsentiment;
+  }
+
+  public static int starRating (String fileName) {
+    double totsentiment = totalSentiment(fileName);
+    if (totsentiment <= -4) {
+      return 1;
+    }
+    else if (totsentiment > -4 && totsentiment <= -2) {
+      return 2;
+    }
+    else if (totsentiment > 0 && totsentiment < 2) {
+      return 3;
+    }
+    else if (totsentiment >= 2 && totsentiment < 4) {
+      return 4;
+    }
+    else {
+      return 5;
+    }
+  }
+
+  public static String fakeReview(String fileName) {
+    String review = textToString(fileName);
+
+    while (review.indexOf("*") > -1) {
+      int askeriskI = review.indexOf("*");
+      int spaceI = review.indexOf(" ", askeriskI); //end index of to-be-deleted adjective
+      review = review.substring(0, askeriskI) + randomAdjective() + review.substring(spaceI);
+    }
+    return review;
   }
 
   public static void main(String[] args) {
     System.out.println(sentimentVal("absent"));
+    System.out.println(sentimentVal("flawed"));
+    System.out.println(sentimentVal("activity"));
+
+    System.out.println("-----------------------------------------------------");
+
+    System.out.println(totalSentiment("SimpleReview.txt"));
+    System.out.println(starRating("SimpleReview.txt"));
+
+    System.out.println("-----------------------------------------------------");
+
+    System.out.println(totalSentiment("TestReview.txt"));
+    System.out.println(starRating("TestReview.txt"));
+
+    System.out.println("-----------------------------------------------------");
+
+    System.out.println(fakeReview("SimpleReview.txt"));
+    System.out.println(fakeReview("TestReview.txt"));
   }
 }

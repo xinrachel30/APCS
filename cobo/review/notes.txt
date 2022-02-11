@@ -1,6 +1,70 @@
-< ACTIVITY 1 >
+Xinqing Lin
+APCS pd6
+HW63: Read/Review/Expand
+2021-02-10
+time spent: 1.2 hr + class time
+
+< Activity 1 > ----------------------------------------------------------------
 
 1a) public static double sentimentVal( String word )
 1b) The method requires a String parameter. If you try to pass a different type
     of parameter (like an int), there will be a compile-time error.
 1c) The return type is a double.
+
+2)
+Method Call                   Return Value
+sentimentVal("absent");       0.08
+sentimentVal("flawed");       -1.56
+sentimentVal("activity");     0.59
+
+3a) Yes. The return type of sentimentVal is a double, which matches double num.
+3b) No. sentimentVal's parameter type is String. It cannot pass an int.
+3c) No. sentimentVal can only pass one String, as per its method signature.
+
+< Activity 2 > ----------------------------------------------------------------
+
+1-3) See Review.java
+
+4) After the totalSentiment translated the review into a String and removed
+punctuation, it iterates through every character. If the character is of the
+alphabet, it adds the character to a temporary String, currentword. If the
+character is a space, it finds and adds the sentimentVal to the totsentiment
+variable and "restarts" currentword. It also finds the sentimentVal of
+currentword after the iteration ends in case the String doesn't end with a space.
+
+5a) The ratings do make sense. The rating for SimpleReview.txt was 2 whereas
+the rating for TestReview.txt. TestReview.txt was very excited and happy
+whereas SimpleReview.txt was very negative. SimpleReview.txt sounded more like
+a 1 star, though.
+
+5b)
+  1) Adjust it so that certain punctuation (such as exclamation marks) amplify
+the direction of the sentiment. Negative reviews become more negative and
+positive reasons become more positive.
+  2) Make a helper method where the number of words are also considered.
+Reviews with less words would need more narrow thresholds.
+
+6) (a) The logical error is that the first conditional, totalSentiment < 15,
+makes the rest of the else if statements useless. For example, if the totalSentiment
+6, that means that it is < 15. This method will then return 4. However,
+the student meant to make the method return 3.
+   (b) One way he could fix it is reversing the order of the conditionals. instead
+of starting with totalSentiment < 15, start with totalSentiment < 0. Another way
+is to make more specific conditionals. For example, instead of totalSentiment < 15,
+totalSentiment < 15 && totalSentiment >= 10.
+
+< Activity 3 > ----------------------------------------------------------------
+
+1) See positiveAdjectives.txt and negativeAdjectives.txt
+
+2) See SimpleReview.txt
+
+3) The indexOf method returns the index of the first occurrence of a String. One
+way you can use this method to divide a String is by finding a divider and taking
+the substring of the first half and the second half. The substring method returns
+a String with a starting index of the first parameter and an ending index of the
+last parameter. It is necessary to add 1 to the position of the space when
+copying the remainder because the first parameter/starting index is inclusive.
+Meaning, the space will be included in the returned String.
+
+4) See Review.java
