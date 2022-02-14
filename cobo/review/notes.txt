@@ -2,7 +2,7 @@ Jinx - Josiah Moltz, Nora Miller, Xinqing Lin
 APCS pd6
 HW63: Read/Review/Expand
 2021-02-10
-time spent: 1.5 hr + class time
+time spent: 2.3 hr + class time
 
 DISCO
 ------------------------------------------------
@@ -54,9 +54,10 @@ a 1 star, though.
   1) Adjust it so that certain punctuation (such as exclamation marks) amplify
 the direction of the sentiment. Negative reviews become more negative and
 positive reasons become more positive.
-  2)
+  2) Consider phrases instead of just words. Words on their own may have differing meaning,
+but phrases are pretty consistent ways of determining positivity/negativity.
 
-  
+
 6) (a) The logical error is that the first conditional, totalSentiment < 15,
 makes the rest of the else if statements useless. For example, if the totalSentiment
 6, that means that it is < 15. This method will then return 4. However,
@@ -112,3 +113,79 @@ as "clean", so sentimentVal("*clean") will return 0 instead of -1.06.
 
 7) A superPositiveAdjectives.txt file could be created with extremely positive words.
 You can call this method in fakeReview to get an extremely positive review.
+
+< Activity 5 > ----------------------------------------------------------------
+
+1) We chose to implement this program because we wanted to create a fun, interesting,
+and playable way to demonstrate our understanding of Strings.
+
+2) We started with an empty main method. We decided to borrow a madlib from the
+internet and stored it in an instance variable. Then, we created the fillIn method
+using methods of the String class and iteration (a while loop). Once we were sure
+that it worked, we added another madlib and gave the players a choice in which one
+they wanted to fill in.
+
+3) public static void fillIn (String story)
+   We chose String story as our parameter because we wanted to give the players a choice
+   on which madlib they wanted to fill out. The input would be either starter1 or starter2.
+   The method is static because we want it to run in the main method (without instantiating)
+   which is in static context.
+
+4)  int askeriskI = madlib.indexOf("*");
+    indexOf("*") returns the first index of an asterisk in the string madlib.
+
+    madlib = madlib.substring(0, askeriskI) + newWord + madlib.substring(spaceI);
+    madlib.substring(0, askeriskI) returns the substring of madlib from index 0 up to but not
+    including askeriskI.
+
+5)
+  OUR CODE SEGMENT:
+    if (choice == 1 || choice == 2) {
+      if (choice == 1) {
+        fillIn(starter1);
+      }
+      else {
+        fillIn(starter2);
+      }
+    }
+    else {
+      System.out.println("Now that's not one of the options!");
+    }
+
+  One alternative way this code could have been written is to use an else-if statement
+  for when choice == 2.
+
+  ALTERNATIVE:
+    if (choice == 1) {
+      fillIn(starter1);
+    }
+    else if (choice == 2) {
+      fillIn(starter2);
+    }
+    else {
+      System.out.println("Now that's not one of the options!");
+    }
+
+6)
+  while (madlib.indexOf("*") > -1) { //iteration
+    int askeriskI = madlib.indexOf("*");
+    int spaceI = madlib.indexOf(" ", askeriskI); //end index of to-be-deleted word
+    System.out.println("Insert a " + madlib.substring(askeriskI + 1, spaceI));
+    String newWord = "";
+    newWord = s.nextLine();
+    madlib = madlib.substring(0, askeriskI) + newWord + madlib.substring(spaceI);
+  }
+
+  The code above continues the body of code as long as there is an * in the string madlib.
+  The body of code replaces the first instance of the * along with the subsequent word connected to it with the users choice.
+
+  for (int i = 0; i < madlib.length()-1; i++) {
+    if (madlib.substring(i,i+1).equals("*")) {
+      int askeriskI = i;
+      int spaceI = madlib.indexOf(" ", askeriskI); //end index of to-be-deleted word
+      System.out.println("Insert a " + madlib.substring(askeriskI + 1, spaceI));
+      String newWord = "";
+      newWord = s.nextLine();
+      madlib = madlib.substring(0, askeriskI) + newWord + madlib.substring(spaceI);
+    }
+  }

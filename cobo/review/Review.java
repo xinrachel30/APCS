@@ -1,3 +1,11 @@
+/*
+Jinx - Josiah Moltz, Nora Miller, Xinqing Lin
+APCS pd6
+HW63: Read/Review/Expand
+2021-02-10
+time spent: 1.5 hr + class time
+*/
+
 import java.util.Scanner;
 import java.io.File;
 import java.util.HashMap;
