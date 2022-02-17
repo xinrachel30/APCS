@@ -1,0 +1,28 @@
+Jinx - Josiah Moltz, Nora Miller, Xinqing Lin
+APCS pd6
+HW65: How Many Queens Can a Thinker Place, If a Thinker Can Place Queens...
+2021-02-16
+time spent: 1 hr
+
+DISCO
+---------------
+(Nora's back of the envelope idea for a recursive solution going from NxN to N+1xN+1: Take an NxN
+solution, and draw lines through the centers of the squares threatened diagonally by each queen.
+This should look like a bunch of parallel diagonal lines on a grid.
+
+Now, we want to figure out how to insert a row and a column somewhere in the array of queens
+and empty squares such that no queen is in danger when you add a queen on the intersection
+of this new column and row. Note that each vertex of the chessboard represents
+a location at which you could potentially add this new queen, and choosing a vertex would
+determine the location of the new queen, and the new column and row. Also note that once the new
+row and column are added, the diagonal lines blocking off certain squares will remain in place.
+
+We want to add the queen in such a way that it is not on any of the diagonal lines. Thus,
+we must add it at a vertex of the chessboard which doesn't have any diagonal lines going through it.
+
+This still has a big hole - I need to prove that you can't ever create a new endangerment situation
+by adding a new row and column - but so far, it works.  )
+
+QCC
+---------------
+- Removing the queen was a bit of a "hard" decision, because it wasn't totally clear that it would work out- We could only find one solution, which is disappointing to me (Josiah).
