@@ -16,7 +16,7 @@ public class canBalance{
             front += nums[i];
             if (front == back) {
                 return true;
-            }
+            } 
         }
         return false;
     }
