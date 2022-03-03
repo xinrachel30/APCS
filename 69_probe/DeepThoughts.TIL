@@ -1,0 +1,21 @@
+Limes – Ryan Lau, Courtney Huang, and Xinqing Lin
+APCS
+HW69 -- Making Sense
+2022-03-02
+time spent: 1 hrs
+
+Mean execution times for boards of size n*n starting from the top left:
+n=5    0.0764s   across 5 executions
+n=6    0.0950s   across 5 executions
+n=7    0.2272s   across 5 executions
+n=8    0.2912s   across 5 executions
+
+No, it is not always possible to find an open tour. We tried to find solutions on a 5x5 board with random starting positions, but we did not always find one.
+If an open tour isn’t possible, then a closed tour is definitely not possible. A closed tour is an open tour with an added requirement.
+Execution time increases because there are more possibilities to try and, as a result, also more chess boards to print out.
+There probably is a way to optimize the code by finding signs that the route won’t work before the dead end, but we’re not sure yet. Perhaps if there’s a 0 surrounded by numbers within a 2 element radius, the current route does not work.
+
+Cleanest Algo for Finding Your Way Out of a Maze:
+Go down the current branch until you reach an intersection.
+Mark the intersection and choose a branch to go down
+Repeat steps 1 and 2 for the other branches. However, if all of the branches at the current intersection do not lead to the end, go back to the last intersection and follow a different branch.

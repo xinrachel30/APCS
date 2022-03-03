@@ -1,11 +1,10 @@
-// JINX - Josiah Moltz, Nora Miller, and Xinqing Lin
-// APCS pd6
-// HW68 -- ...and T-, Tr-, Tri-, Tries Again Until It's Done / recursively probing for a closed cycle
-// 2022-03-01
-// time spent: 2.5 hrs (most was spent waiting for n=8 to run)
+// Clyde Sinclair
+// APCS pd0
+// HW68 -- recursively probing for a closed cycle
+// 2022-02-28m
+// time spent:  hrs
 
 /***
- * SKELETON
  * class KnightTour (and supporting class TourFinder)
  * Animates generation of a Knight's Tour on a square chess board.
  *
@@ -15,30 +14,21 @@
  * $ java KnightTour [N]
  *
  * ALGO
- * - If tour completed, print and exit
- * - If selected space occupied or out of bounds, stop this attempt
- * - Otherwise, mark current space and test all other possibilities
- * - If all possibilities exhausted, remove most recent knight and stop this attempt
  *
  * DISCO
- * - The primary base case should be _sideLength * _sideLength + 1, not _sideLength * _sideLength
- *   because, if we end the method at _sideLength * _sideLength, we won't be able to mark the
- *   last square with a move number.
  *
  * QCC
- * - Trying to find a solution for the 8x8 board took a very, very long time.
  *
  * Mean execution times for boards of size n*n:
- * n=5   10.320s    across 5 executions
- * n=6   286.11s    across 1 executions
- * n=7   26.535s    across 3 executions
- * n=8   NOT DONE RUNNING, RUN FOR ABOUT 1HRs    across 1 executions
+ * n=5   __s    across __ executions
+ * n=6   __s    across __ executions
+ * n=7   __s    across __ executions
+ * n=8   __s    across __ executions
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
  *
  ***/
-
 
 import java.io.*;
 import java.util.*;
@@ -48,7 +38,7 @@ public class KnightTour
 {
   public static void main( String[] args )
   {
-    int n = 6;
+    int n = 8;
 
     try {
       n = Integer.parseInt( args[0] );
@@ -66,15 +56,16 @@ public class KnightTour
     System.out.println( tf );
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    //for fixed starting location, use line below:
-    tf.findTour( 2, 2, 1 );
+    //for fixed starting location, use a line below:
+    //tf.findTour( 3, 3, 1 ); //upper left corner
+    //tf.findTour( 6, 2, 1 ); //upper right corner
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    int startX = (Math.random() * n) + 2;
-    int startY = (Math.random() * n) + 2;
-    //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+    int startX = 2 + (int)( n * Math.random() );
+    int startY = 2 + (int)( n * Math.random() );
+    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,7 +83,7 @@ class TourFinder
   //instance vars
   private int[][] _board;
   private int _sideLength; //board has dimensions n x n
-  private boolean _solved = false; // ?
+  private boolean _solved = false;
 
   //constructor -- build board of size n x n
   public TourFinder( int n )
@@ -100,21 +91,18 @@ class TourFinder
     _sideLength = n;
 
     //init 2D array to represent square board with moat
-    _board = new int[_sideLength+4][_sideLength+4];
+    _board = new int[n+4][n+4];
 
     //SETUP BOARD --  0 for unvisited cell
     //               -1 for cell in moat
     //---------------------------------------------------------
-    for (int i = 0; i < _sideLength+4; i++) {
-      _board[i][0] = -1;
-      _board[i][1] = -1;
-      _board[0][i] = -1;
-      _board[1][i] = -1;
-      _board[i][_sideLength+2] = -1;
-      _board[i][_sideLength+3] = -1;
-      _board[_sideLength+2][i] = -1;
-      _board[_sideLength+3][i] = -1;
-    }
+    for( int i=0; i < n+4; i++ )
+      for( int j=0; j < n+4; j++ )
+        _board[i][j] = -1; //lay down initial blanket of -1's
+
+    for( int i=2; i < n+2; i++ )
+      for( int j=2; j < n+2; j++ )
+        _board[i][j] = 0; //lay down 0's for actual _board
     //---------------------------------------------------------
 
   }//end constructor
@@ -164,13 +152,13 @@ class TourFinder
    **/
   public void findTour( int x, int y, int moves )
   {
-    //delay(50); //slow it down enough to be followable
+    // delay(50); //slow down enough to make "backtracking" visible
 
     //if a tour has been completed, stop animation
-    if ( _solved == true ) System.exit(0);
+    if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
-    if ( moves == _sideLength * _sideLength + 1 ) {
+    if ( moves > _sideLength*_sideLength ) {
       _solved = true;
       System.out.println( this ); //refresh screen
       return;
@@ -186,9 +174,9 @@ class TourFinder
       //mark current cell with current move number
       _board[x][y] = moves;
 
-      System.out.println( this ); //refresh screen
+      // System.out.println( this ); //refresh screen
 
-      //delay(1000); //uncomment to slow down enough to view
+      // delay(1000); //uncomment to slow down enough to view probings
 
       /******************************************
        * Recursively try to "solve" (find a tour) from
@@ -199,20 +187,20 @@ class TourFinder
        *     g . . . b
        *     . h . a .
       ******************************************/
-      findTour( x+2, y+1, moves+1);
-      findTour( x+2, y-1, moves+1);
-      findTour( x-2, y+1, moves+1);
-      findTour( x-2, y-1, moves+1);
-      findTour( x+1, y+2, moves+1);
-      findTour( x+1, y-2, moves+1);
-      findTour( x-1, y+2, moves+1);
-      findTour( x-1, y-2, moves+1);
+      findTour( x+1, y+2, moves+1 ); // a
+      findTour( x+2, y+1, moves+1 ); // b
+      findTour( x+2, y-1, moves+1 ); // c
+      findTour( x+1, y-2, moves+1 ); // d
+      findTour( x-1, y-2, moves+1 ); // e
+      findTour( x-2, y-1, moves+1 ); // f
+      findTour( x-2, y+1, moves+1 ); // g
+      findTour( x-1, y+2, moves+1 ); // h
 
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
       _board[x][y] = 0;
 
-      System.out.println( this ); //refresh screen
+      // System.out.println( this ); //refresh screen
     }
   }//end findTour()
 
