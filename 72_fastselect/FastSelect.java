@@ -40,19 +40,24 @@ public class FastSelect {
       if (partition(arr, 0, arr.length - 1, i) == y-1) {
         return arr[i];
       }
+      else if (partition(arr, 0, arr.length - 1, i) > y-1){
+
+      }
 
     }
     return -1;
+
+
 
   }
 
   public static int partition( int refArr[], int a, int b, int c)
 {
 
-  int[] arr = new int[refArr.length];
-  for (int i = 0; i < arr.length; i++) {
-    arr[i] = refArr[i];
-  }
+  // int[] arr = new int[refArr.length];
+  // for (int i = 0; i < arr.length; i++) {
+  //   arr[i] = refArr[i];
+  // }
 
   int v = arr[c];
 
