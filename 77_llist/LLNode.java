@@ -12,7 +12,7 @@ time spent: 0.6 hrs
  * Stores its data as a String
  **/
 
-public class LLNode 
+public class LLNode  
 {
   //instance vars
   private String value;
