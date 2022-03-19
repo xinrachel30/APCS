@@ -1,0 +1,9 @@
+1. A deck is a ArrayList of cards.
+
+2. 6 cards
+
+3. String[] ranks = {"ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queens", "king"};
+   String[] suits = {"spades", "hearts", "diamonds", "clubs"};
+   int[] pointValues = {11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
+
+4. Yes because the parameters in the method signature of Deck's constructor are ordered in a certain way (ranks -> suits -> pointValues)

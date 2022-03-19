@@ -40,7 +40,6 @@ public class Deck {
 		shuffle();
 	}
 
-
 	/**
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
@@ -62,7 +61,14 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		int[] shuffled = new int[cards.size()];
+		for (int k = cards.size() - 1; k > 0; k--) {
+			int r = (int)(Math.random() * (k + 1));
+			Card tmp = cards.get(k);
+			cards.set(k, cards.get(r));
+			cards.set(r, tmp);
+		}
+		size = cards.size();
 	}
 
 	/**

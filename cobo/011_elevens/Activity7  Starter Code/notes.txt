@@ -1,0 +1,26 @@
+1. 9 cards (arranged in 3 x 3), the main deck, the garbage pile (used cards)
+    private Deck mainDeck;
+    private Deck garbageDeck;
+    private Deck nineDeck;
+
+2.
+  1. Make and shuffle a mainDeck.
+  2. Remove cards from mainDeck and place them in nineDeck
+  3. Check for 11s
+    - Find pairs
+    - If there are no pairs, find 3 consecutive face-value cards
+    - If that doesn't work, game ends.
+  4. If there are pairs or 3 consecutive face-value cards, remove them from
+     nineDeck and place them in garbageDeck
+  5. Replace the cards you removed by taking from the mainDeck
+  6. Repeat steps 3-5 until there is 1 or 0 cards left in the nineDeck
+
+3. No, it does not.
+
+4.
+
+  a. The dealMyCards method is called in the constructor and in the newGame() method
+
+  b. In the anotherPlayIsPossible() method and in the isLegal() method
+
+  c.

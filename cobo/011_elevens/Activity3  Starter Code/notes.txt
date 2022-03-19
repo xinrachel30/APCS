@@ -1,0 +1,24 @@
+1.
+
+  public static String flip() {
+    int mayQiu = (int)(Math.random() * 3);
+    if (mayQiu <= 1) { // 0 1
+      return "heads";
+    }
+    else { // 2
+      return "tails";
+    }
+  }
+
+2.
+
+  public static boolean arePermutations(int[] arr1, int[] arr2) {
+    for (int i = 0; i < arr1.length; i++) {
+      if (arr2.indexOf(arr1[i]) == -1) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  3. The sequence doesn't matter because there is always a random component.
