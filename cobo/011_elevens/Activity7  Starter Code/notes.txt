@@ -23,4 +23,18 @@
 
   b. In the anotherPlayIsPossible() method and in the isLegal() method
 
-  c.
+  c. Returned list -> 0, 1, 3, 6, 7
+
+  d.
+
+    public static void printCards (ElevensBoard board) {
+      List<Integer> cIndexes = board.cardIndexes();
+
+      for (int i = 0; i < cIndexes.size(); i++) {
+        System.out.println(board.get(cIndexes.get(i)));
+      }
+
+    }
+
+  e. Both of the methods because it'll make it easier to find indexes with Cards. Both of these methods
+     need this function because they need to be able to compare Cards.
