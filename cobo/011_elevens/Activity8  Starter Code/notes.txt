@@ -1,0 +1,8 @@
+1. One similarity is that you have to find pairs of cards that add up to the name of the game.
+   One difference is in the conditions for removing face value cards.
+
+2. The instance variables are initialized as final instance variables.
+
+3. If the methods were implemented, they do cover the differences. The main differences
+   are in the number that the pairs add up to and the conditions for removing
+   face value cards.

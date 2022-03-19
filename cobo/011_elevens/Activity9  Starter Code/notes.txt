@@ -1,0 +1,10 @@
+1. deckSize() is not an abstract method because it always returns the instance variable, size, which
+   does vary from board to board.
+
+2. Because the methods will differ from board to board. For ElevensBoard, we need to select two cards
+   that add up to 11. But for, say, ThirteensBoard, we need to select two cards that add up to 13.
+   These methods would have different names and implementations, so they are not in Board.java
+
+3. The GUI would still be able to call isLegal and anotherPlayIsPossible correctly, but the interface
+   design would not work as well as the abstract class design because the abstract class had more
+   methods that would be useful to the boards on the lower level (e.g. ElevensBoard / ThirteensBoard)
