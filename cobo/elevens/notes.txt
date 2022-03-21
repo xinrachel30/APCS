@@ -1,0 +1,106 @@
+Juxtaglomerular: May Qiu, Xinqing Lin, Jeffery Tang
+APCS
+L07 - Elevens
+2022-03-21
+time spent: 4 hrs 
+
+Activity 2:
+1. A deck is a ArrayList of cards.
+
+2. 6 cards
+
+3. String[] ranks = {"ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queens", "king"};
+   String[] suits = {"spades", "hearts", "diamonds", "clubs"};
+   int[] pointValues = {11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
+
+4. Yes because the parameters in the method signature of Deck's constructor are ordered in a certain way (ranks -> suits -> pointValues)
+
+Activity 3:
+1.
+
+  public static String flip() {
+    int mayQiu = (int)(Math.random() * 3);
+    if (mayQiu <= 1) { // 0 1
+      return "heads";
+    }
+    else { // 2
+      return "tails";
+    }
+  }
+
+2.
+
+  public static boolean arePermutations(int[] arr1, int[] arr2) {
+    for (int i = 0; i < arr1.length; i++) {
+      if (arr2.indexOf(arr1[i]) == -1) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  3. The sequence doesn't matter because there is always a random component.
+
+Activity 7:
+1. 9 cards (arranged in 3 x 3), the main deck, the garbage pile (used cards)
+    private Deck mainDeck;
+    private Deck garbageDeck;
+    private Deck nineDeck;
+
+2.
+  1. Make and shuffle a mainDeck.
+  2. Remove cards from mainDeck and place them in nineDeck
+  3. Check for 11s
+    - Find pairs
+    - If there are no pairs, find 3 consecutive face-value cards
+    - If that doesn't work, game ends.
+  4. If there are pairs or 3 consecutive face-value cards, remove them from
+     nineDeck and place them in garbageDeck
+  5. Replace the cards you removed by taking from the mainDeck
+  6. Repeat steps 3-5 until there is 1 or 0 cards left in the nineDeck
+
+3. No, it does not.
+
+4.
+
+  a. The dealMyCards method is called in the constructor and in the newGame() method
+
+  b. In the anotherPlayIsPossible() method and in the isLegal() method
+
+  c. Returned list -> 0, 1, 3, 6, 7
+
+  d.
+
+    public static void printCards (ElevensBoard board) {
+      List<Integer> cIndexes = board.cardIndexes();
+
+      for (int i = 0; i < cIndexes.size(); i++) {
+        System.out.println(board.get(cIndexes.get(i)));
+      }
+
+    }
+
+  e. Both of the methods because it'll make it easier to find indexes with Cards. Both of these methods
+     need this function because they need to be able to compare Cards.
+
+Activity 8:
+1. One similarity is that you have to find pairs of cards that add up to the name of the game.
+   One difference is in the conditions for removing face value cards.
+
+2. The instance variables are initialized as final instance variables.
+
+3. If the methods were implemented, they do cover the differences. The main differences
+   are in the number that the pairs add up to and the conditions for removing
+   face value cards.
+
+Activity 9:
+1. deckSize() is not an abstract method because it always returns the instance variable, size, which
+   does vary from board to board.
+
+2. Because the methods will differ from board to board. For ElevensBoard, we need to select two cards
+   that add up to 11. But for, say, ThirteensBoard, we need to select two cards that add up to 13.
+   These methods would have different names and implementations, so they are not in Board.java
+
+3. The GUI would still be able to call isLegal and anotherPlayIsPossible correctly, but the interface
+   design would not work as well as the abstract class design because the abstract class had more
+   methods that would be useful to the boards on the lower level (e.g. ElevensBoard / ThirteensBoard)
