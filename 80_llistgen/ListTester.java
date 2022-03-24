@@ -54,6 +54,35 @@ public class ListTester
       wu.remove(n);
       System.out.println("Updated list: " + wu);
     }
+
+    System.out.println("--------------------------------------------------------");
+
+    LList<Integer> squirrel = new LList();
+    squirrel.add(16);
+    squirrel.add(19);
+    squirrel.add(82);
+    squirrel.add(7);
+    squirrel.add(54);
+    squirrel.add(93);
+    squirrel.add(38);
+    squirrel.add(23);
+
+    System.out.println(wu);
+
+    for (int i = 0; i < 7; i++) {
+      int n = (int) ( squirrel.size() * Math.random() );
+      int imposter = 0;
+      System.out.println("adding imposter at index " + n + "...");
+      squirrel.add( n, imposter );
+      System.out.println("Updated list: " + squirrel);
+    }
+
+    while ( squirrel.size() > 0 ) {
+      int n = (int) ( squirrel.size() * Math.random() );
+      System.out.println("deleting node "+ n + "...");
+      squirrel.remove(n);
+      System.out.println("Updated list: " + squirrel);
+    }
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()

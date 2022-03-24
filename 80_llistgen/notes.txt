@@ -1,0 +1,14 @@
+Duolingo -- Brianna Tieu, Courtney Huang, and Xinqing Lin
+APCS pd6
+HW80 -- Generically Speaking
+2022-03-23
+time spent: hrs
+
+QCC:
+
+
+DISCO:
+- We can use a arbitrary variable, T, to represent a generic types of input that
+  would work with doubly-linked lists.
+- In LList.java, we can use typecasting to generically type the linked lists to
+  work for different types of objects.

@@ -83,7 +83,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
         System.out.println( "tmp1: " + tmp1.getCargo() );
       }
       //check target node's cargo hold
-      T retVal = tmp1.getNext().getCargo();
+      T retVal = (T) tmp1.getNext().getCargo();
 
       //remove target node
       tmp1.setNext( tmp1.getNext().getNext() );
@@ -110,7 +110,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
       tmp = tmp.getNext();
 
     //check target node's cargo hold
-    retVal = tmp.getCargo();
+    retVal = (T) tmp.getCargo();
     return retVal;
   }
 
@@ -127,7 +127,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
       tmp = tmp.getNext();
 
     //store target node's cargo
-    T oldVal = tmp.getCargo();
+    T oldVal = (T) tmp.getCargo();
 
     //modify target node's cargo
     tmp.setCargo( newVal );
@@ -170,9 +170,9 @@ public class LList<T> implements List<T> //your List.java must be in same dir
   }
 
 
-  public T getFirst() { return _head.getCargo(); }
+  public T getFirst() { return (T) _head.getCargo(); }
 
-  public T getLast() { return _tail.getCargo(); }
+  public T getLast() { return (T) _tail.getCargo(); }
 
 
   public T removeFirst()
