@@ -1,0 +1,22 @@
+Duolingo -- Brianna Tieu, Courtney Huang, and Xinqing Lin
+APCS pd6
+HW82 -- Roll Your Own Iterator
+2022-03-27
+time spent: hrs
+
+DISCO:
+- When compiling V6Driver.java, which calls LList.java with inner class
+  MyIterator, we see LList$MyIterator.class in the directory, which indicates
+  the inner class is being called.
+- The method outside of the MyIterator class, iterator() is specifically what
+  invokes a new instance of the inner class being called.
+- The _okToRemove variable makes sure that next has been called to remove, to
+  make sure that we aren't trying to remove any elements in the list before
+  iterating through it since _dummy begins BEFORE the _head.
+- You can assign multiple aliases for the same object in one line by using
+  more than one equal sign. Specifically, the line "_dummy = _head = new DLLNode<T> (null, null, null);"
+  creates a new object and sets _head as an alias for the empty list, then sets
+  _dummy as an alias for _head, which would refer to the same null list.
+QCC:
+- What are the main benefits of using inner classes such as MyIterator in this
+  case?
