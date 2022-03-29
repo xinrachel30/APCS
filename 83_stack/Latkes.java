@@ -22,7 +22,6 @@ public class Latkes
 {
   private String [] _stack;
   private int _stackSize;
-  private String [] copy;
 
 
   //constructor
@@ -37,11 +36,11 @@ public class Latkes
   public void push( String s )
   {
     if (isFull()) {
-      copy = new String[_stackSize+1];
+      String [] copy = new String[_stackSize+1];
       for (int i = 0; i < _stack.length ; i++){
-      copy[i] = _stack[i];
-    }
-    _stack = copy;
+        copy[i] = _stack[i];
+      }
+      _stack = copy;
       _stack[_stackSize] = s;
       _stackSize ++;
     }
@@ -49,7 +48,7 @@ public class Latkes
     _stack[_stackSize] = s;
     _stackSize ++;
   }
-  }// O(1)
+}// O(n) worse case scenario
 
 
   //means of removal
