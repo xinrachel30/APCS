@@ -1,3 +1,11 @@
+/*
+Duolingo -- Brianna Tieu, Courtney Huang, and Xinqing Lin
+APCS pd6
+HW83 -- Stacks on Stacks
+2022-03-28
+time spent: 0.3 hr
+*/
+
 /***
  * class Latkes
  * v1
@@ -6,17 +14,15 @@
  **/
 
 /***
-    DISCO
-
-    QCC
-
+    DISCO: To increase the capacity of the array, we made a copy of the array.
+    QCC:  Is there another way to increase the capcity of the array?
  **/
-import java.util.NoSuchElementException;
 
 public class Latkes
 {
   private String [] _stack;
   private int _stackSize;
+  private String [] copy;
 
 
   //constructor
@@ -31,11 +37,18 @@ public class Latkes
   public void push( String s )
   {
     if (isFull()) {
-      throw new IndexOutOfBoundsException();
-
+      copy = new String[_stackSize+1];
+      for (int i = 0; i < _stack.length ; i++){
+      copy[i] = _stack[i];
     }
+    _stack = copy;
+      _stack[_stackSize] = s;
+      _stackSize ++;
+    }
+    else{
     _stack[_stackSize] = s;
     _stackSize ++;
+  }
   }// O(1)
 
 
@@ -43,10 +56,11 @@ public class Latkes
   public String pop( )
   {
     if (isEmpty()) {
-      throw new IndexOutOfBoundsException();
+      String none = "NULL";
+      return none;
     }
-    String ret = _stack[_stackSize];
-    _stack[_stackSize] = "";
+    String ret = _stack[_stackSize-1];
+    _stack[_stackSize-1] = "";
     _stackSize --;
     return ret;
 
