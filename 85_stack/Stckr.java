@@ -15,20 +15,28 @@ public class Stckr
     Stack<String> cakes = new LLStack<String>();
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    System.out.println("-- Adding to Stack --");
+
+    System.out.println("isEmpty? : " + cakes.isEmpty());
     cakes.push("courtney");
-    cakes.push("brianna");
-    cakes.push("jeffery");
-    cakes.push("mykolyk");
-    cakes.pop();
     System.out.println(cakes.peekTop());
-    cakes.pop();
+    cakes.push("brianna");
+    System.out.println(cakes.peekTop());
+    cakes.push("jeff");
+    System.out.println(cakes.peekTop());
+    cakes.push("mykolyk");
+    System.out.println(cakes.peekTop());
+    System.out.println("isEmpty? : " + cakes.isEmpty());
 
-    System.out.println(cakes.isEmpty());
+    System.out.println("\n-- Removing from Stack --");
 
-    cakes.pop();
-    cakes.pop();
+    System.out.println("isEmpty? : " + cakes.isEmpty());
+    System.out.println(cakes.pop());
+    System.out.println(cakes.pop());
+    System.out.println(cakes.pop());
+    System.out.println(cakes.pop());
+    System.out.println("isEmpty? : " + cakes.isEmpty());
 
-    System.out.println(cakes.isEmpty());
 
     //...
 
