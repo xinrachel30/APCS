@@ -1,0 +1,14 @@
+Duolingo -- Brianna Tieu, Courtney Huang, and Xinqing Lin
+APCS pd6
+HW84 -- Stack: What Is It Good For?
+2022-03-28
+time spent: 0.7 hr
+
+DISCO
+- <PANCAKE> / <Courtney> in the interface doesn't matter. It just signifies
+  generic typing. PANCAKE and Courtney in this case are types.
+- ArrayList and LLStack have many of the same methods (such as add() and size())
+
+QCC
+- One way to make sure the file follows the "guidelines" under the interface
+  is to copy the method signatures from the interface.
