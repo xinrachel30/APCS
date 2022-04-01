@@ -6,10 +6,7 @@ HW86 -- What a Racket
 time spent: 0.9 hr
 */
 
-/***
- * class Scheme
- * Simulates a rudimentary Scheme interpreter
- *
+/******************************************************
  * ALGORITHM for EVALUATING A SCHEME EXPRESSION:
  *   1. Convert the String expr into a String[] of all the operators, parens, and operands
  *   2. Parse through the String[] and put every character into a stack. Note the current operation
@@ -18,10 +15,11 @@ time spent: 0.9 hr
  *      Put the resulting value into the stack.
  *   4. Repeat steps 2-3 until the entire expr is evaluated. There should only be one value in stack left, which will be returned.
  *
- * STACK OF CHOICE: stack by ALStack.java
- * because our team finds ArrayList easier to work with, but both stacks provide
+ * STACK OF CHOICE: stack by ALStack.java b/c . . .
+ * our team finds ArrayList easier to work with, but both stacks provide
  * the basic functionality necessary.
- **/
+ ******************************************************/
+
 
 public class Scheme
 {
