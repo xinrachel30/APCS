@@ -1,4 +1,4 @@
-public static class LLNode<QUASAR>                        //innerclass LLNode
+public class LLNode<QUASAR>
 {
   //instance vars
   private QUASAR value;
