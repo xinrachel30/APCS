@@ -22,43 +22,48 @@ public class Welcome03_List {
                                                       "station/latitude", "station/longitude");
      System.out.println("Total stations: " + allstns.size());
 
-      // Scanner sc = new Scanner(System.in);
-      // System.out.println("Enter a state abbreviation: ");
-      // String state = sc.next();
-      // System.out.println("Stations in " + state);
-      // for (WeatherStation ws : allstns) {
-      //    if (ws.isLocatedInState(state)) {
-      //       System.out.println("  " + ws.getId() + ": " + ws.getName());
-      //    }
-      // }
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter a state abbreviation: ");
+      String state = sc.next();
+      System.out.println("Stations in " + state);
+      WeatherStation smallest = allstns.get(0);
+      for (WeatherStation ws : allstns) {
+         if (ws.isLocatedInState(state)) {
+           if(ws.getLat() < smallest.getLat()) {
+             smallest = ws;
+           }
+            System.out.println("  " + ws.getId() + ": " + ws.getName());
+         }
+      }
+      System.out.println("Southmost: " + smallest.getId() + ": " + smallest.getName());
    }
 
-  public class WeatherStation {
-
-    private String name;
-    private String id;
-    private String state;
-    private double lat;
-    private double lng;
-
-    public WeatherStation(String name, String id, String state, double lat, double lng) {
-        this.name = name;
-        this.id = id;
-        this.lat = lat;
-        this.lng = lng;
-        this.state = state;
-     }
-
-    public String getId() {
-      return id;
-    }
-
-    public String getName() {
-      return name;
-    }
-
-    public boolean isLocatedInState(String state) {
-      return this.state.equals(state);
-    }
-  }
+  // public class WeatherStation {
+  //
+  //   private String name;
+  //   private String id;
+  //   private String state;
+  //   private double lat;
+  //   private double lng;
+  //
+  //   public WeatherStation(String name, String id, String state, double lat, double lng) {
+  //       this.name = name;
+  //       this.id = id;
+  //       this.lat = lat;
+  //       this.lng = lng;
+  //       this.state = state;
+  //    }
+  //
+  //   public String getId() {
+  //     return id;
+  //   }
+  //
+  //   public String getName() {
+  //     return name;
+  //   }
+  //
+  //   public boolean isLocatedInState(String state) {
+  //     return this.state.equals(state);
+  //   }
+  // }
 }

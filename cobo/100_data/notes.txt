@@ -9,14 +9,16 @@ DISCO
 -
 
 QCC
--
+- A .jar file will be ignored by the git.ignore file on Github. To work around this,
+  you must do git add -f fileName
 
 Pseudopseudohypoparathyroidism's CSV FLOW:
-<insert your description of your tools and workflow in creating, editing CSV files>
-
+We looked over two datasets via Spreadsheets about the number and causes of death as well as cars being auctioned.
+We looked through the first row to see what each number meant. Then, we interpretted the data.
+To count the number of records, we looked at the number of rows. 
 
 TRUBZ
 - We originally had some problems with compiling and running the Welcome files, but
   we fortunately got help from Raven Tang on piazza.
-- Currently having problems running Welcome03_List because it cannot find a class named
-  WeatherStation
+- Had to manually do git add -f sinbad.jar in order to make sure the .jar file was
+  on the repo.
