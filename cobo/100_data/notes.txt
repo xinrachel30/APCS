@@ -1,19 +1,22 @@
-Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon
-APCS
-LAB08 --
+Pseudopseudohypoparathyroidism -- Xinqing Lin, Jeffery Tang, May Qiu
+APCS pd 6
+LAB08 -- America's Next Top Data Scientist
 2022-04-05
-time spent: <elapsed time in hours, rounded to nearest tenth>
+time spent: 2 hr
 
 
 DISCO
-
+-
 
 QCC
+-
 
-
-<TNPG>'s CSV FLOW:
+Pseudopseudohypoparathyroidism's CSV FLOW:
 <insert your description of your tools and workflow in creating, editing CSV files>
 
 
 TRUBZ
-<this lab involves using tools that are likely to introduce hiccups; log any troubleshooting issues here>
+- We originally had some problems with compiling and running the Welcome files, but
+  we fortunately got help from Raven Tang on piazza.
+- Currently having problems running Welcome03_List because it cannot find a class named
+  WeatherStation
