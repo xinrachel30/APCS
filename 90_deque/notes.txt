@@ -1,0 +1,12 @@
+Duolingo -- Brianna Tieu, Courtney Huang, and Xinqing Lin
+APCS pd6
+HW90 -- Swabbing the Deque
+2022-04-12
+time spent: 0.5 hr
+
+DISCO:
+- The Deque and LinkedList interfaces both include similar methods.
+- Deque expands on Queue and allows for functionality on both ends of the deque.
+QCC:
+- What is the purpose of having methods such as peek or poll if they can both
+  perform the same jobs?
