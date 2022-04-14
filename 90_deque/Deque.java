@@ -39,4 +39,7 @@ public interface Deque<QUASAR> {
 
   //returns size of the collection.
   public int size();
+
+  //returns true if this deque contains the specified element
+  public boolean contains(QUASAR x);
 }
