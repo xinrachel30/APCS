@@ -1,11 +1,11 @@
 /*
 RachelHateCult: May Qiu, Jeffery Tang, Xinqing Lin
 APCS pd6
-L09: Some Folkds Call It A Charades
+L09: Some Folks Call It A Charades
 2022-04-26
 time spent: 1 hr
 */
-
+package celeb;
 import java.util.ArrayList;
 
 /**
@@ -19,13 +19,13 @@ public class CelebrityGame
 	/**
 	 * A reference to a Celebrity or subclass instance.
 	 */
-
+	 private Celebrity gameCelebrity;
 	 private Celebrity currentCelebrity;
 
 	/**
 	 * The GUI frame for the Celebrity game.
 	 */
-
+	 CelebrityFrame gameWindow = new CelebrityFrame(this);
 	/**
 	 * The ArrayList of Celebrity values that make up the game
 	 */

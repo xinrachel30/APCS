@@ -5,7 +5,7 @@ L09: Some Folks Call It A Charades
 2022-04-26
 time spent: 1 hr
 */
-
+package celeb;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -58,7 +58,7 @@ public class StartPanel extends JPanel
    */
 
    private JRadioButton popRadio;
-   private String taylorSwift;
+   private String nameOfCelebrity;
 
   /**
    * Label to guide the user to what should be inputted.

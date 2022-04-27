@@ -3,6 +3,7 @@
  * @author cody.henrichsen
  *
  */
+package celeb;
 public class CelebrityRunner
 {
 	/**
@@ -11,6 +12,6 @@ public class CelebrityRunner
 	 */
 	public static void main(String [] args)
 	{
-
+		CelebrityGame plsWork = new CelebrityGame();
 	}
 }
