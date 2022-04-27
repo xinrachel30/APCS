@@ -1,3 +1,11 @@
+/*
+RachelHateCult: May Qiu, Jeffery Tang, Xinqing Lin
+APCS pd6
+L09: Some Folkds Call It A Charades
+2022-04-26
+time spent: 1 hr
+*/
+
 /**
  * Celebrity base class for the Celebrity game.
  * @author cody.henrichsen
@@ -8,11 +16,11 @@ public class Celebrity
 	/**
 	 * The clue to determine the celebrity
 	 */
-	private String _clue = "";
+	private String _clue;
 	/**
 	 * The answer or name of the celebrity.
 	 */
-	private String _name = "";
+	private String _name;
 	/**
 	 * Creates a Celebrity instance with the supplied answer and clue
 	 * @param answer
@@ -30,7 +38,7 @@ public class Celebrity
 	 */
 	public String getClue()
 	{
-		return _clue;
+		return "The clue is... " + _clue;
 	}
 
 	/**
@@ -39,7 +47,7 @@ public class Celebrity
 	 */
 	public String getAnswer()
 	{
-		return _name;
+		return "The correct answer was " + _name + "!";
 	}
 
 	/**
@@ -66,7 +74,7 @@ public class Celebrity
 	@Override
 	public String toString()
 	{
-		return "Name of celebrity is " + _name;
+		return "The name of celebrity is " + _name;
 	}
 
 }

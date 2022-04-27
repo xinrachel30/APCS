@@ -1,3 +1,11 @@
+/*
+RachelHateCult: May Qiu, Jeffery Tang, Xinqing Lin
+APCS pd6
+L09: Some Folkds Call It A Charades
+2022-04-26
+time spent: 1 hr
+*/
+
 import java.util.ArrayList;
 
 /**
@@ -12,6 +20,8 @@ public class CelebrityGame
 	 * A reference to a Celebrity or subclass instance.
 	 */
 
+	 private Celebrity currentCelebrity;
+
 	/**
 	 * The GUI frame for the Celebrity game.
 	 */
@@ -19,13 +29,14 @@ public class CelebrityGame
 	/**
 	 * The ArrayList of Celebrity values that make up the game
 	 */
-	 private ArrayList<Celebrity> celebGameList = new ArrayList<Celebrity>();
+	 private ArrayList<Celebrity> celebGameList;
 	/**
 	 * Builds the game and starts the GUI
 	 */
 	public CelebrityGame()
 	{
 		gameWindow = new CelebrityFrame(this);
+		celebGameList = new ArrayList<Celebrity>();
 	}
 
 	/**
@@ -47,8 +58,15 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
-		guess = guess.trim();
-		return guess.equals(this._name);
+		boolean matches = false;
+		if (guess.trim().equalsIgnoreCase(gameCelebrity.getAnswer())) {
+			matches = true;
+			celebGameList.remove(0);
+			if (celebGameList.size() > 0) {
+				gameCelebrity = celebGameList.get(0);
+			}
+		}
+		return matches;
 	}
 
 	/**
@@ -58,7 +76,7 @@ public class CelebrityGame
 	 */
 	public void play()
 	{
-		if(celebGameList != null && celebGameList.size() > 0){
+		if (celebGameList != null && celebGameList.size() > 0){
 			this.gameCelebrity = celebGameList.get(0);
 			gameWindow.replaceScreen("GAME");
 		}
@@ -76,9 +94,17 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		Celebrity jahdhd = new Celebrity(name, guess);
-		celebGameList.add(jahdhd);
-		//need to add type
+		Celebrity currentCelebrity;
+		if (type.equals("Literature")) {
+			currentCelebrity = new LiteratureCelebrity(name, guess);
+		}
+		else if (type.equals("Pop")) {
+			currentCelebrity = new PopCelebrity(name, guess);
+		}
+		else {
+			currentCelebrity = new Celebrity(name, guess);
+		}
+		this.celebGameList.add(currentCelebrity);
 	}
 
 	/**
@@ -88,7 +114,7 @@ public class CelebrityGame
 	 */
 	public boolean validateCelebrity(String name)
 	{
-		return false;
+		return name.trim().length() >= 4;
 	}
 
 	/**
@@ -98,9 +124,30 @@ public class CelebrityGame
 	 * @param type Supports a subclass of Celebrity
 	 * @return If the clue is valid.
 	 */
-	public boolean validateClue(String clue, String type)
-	{
-		return false;
+public boolean validateClue(String clue, String type) {
+	boolean validClue = false;
+	if (clue.trim().length() >= 10) {
+		validClue = true;
+		if (type.trim().equalsIgnoreCase("literature")) {
+			String[] temp = clue.split(",");
+			if (temp.length > 1) {
+				validClue = true;
+			}
+			else {
+				validClue = false;
+			}
+		}
+		else if (type.trim().equalsIgnoreCase("pop")) {
+			String[] temp = clue.split(",");
+			if (temp.length > 1) {
+				validClue = true;
+			}
+			else {
+				validClue = false;
+			}
+		}
+	}
+	return validClue;
 	}
 
 	/**
@@ -110,7 +157,7 @@ public class CelebrityGame
 	 */
 	public int getCelebrityGameSize()
 	{
-		return 0;
+		return celebGameList.size();
 	}
 
 	/**
@@ -121,7 +168,7 @@ public class CelebrityGame
 	 */
 	public String sendClue()
 	{
-		return null;
+		return currentCelebrity.getClue();
 	}
 
 	/**
@@ -132,6 +179,6 @@ public class CelebrityGame
 	 */
 	public String sendAnswer()
 	{
-		return null;
+		return currentCelebrity.getAnswer();
 	}
 }
