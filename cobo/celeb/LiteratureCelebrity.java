@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-package celeb;
 /**
  * Subclass of Celebrity to show how methods can be overridden and super can be called while changing functionality.
  * @author cody.henrichsen

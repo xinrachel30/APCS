@@ -5,7 +5,6 @@ L09: Some Folkds Call It A Charades
 2022-04-26
 time spent: 1 hr
 */
-package celeb;
 /**
  * Celebrity base class for the Celebrity game.
  * @author cody.henrichsen

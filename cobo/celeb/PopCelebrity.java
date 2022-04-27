@@ -5,7 +5,6 @@ L09: Some Folkds Call It A Charades
 2022-04-26
 time spent: 1 hr
 */
-package celeb;
 import java.util.ArrayList;
 
 public class PopCelebrity extends Celebrity

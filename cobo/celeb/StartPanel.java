@@ -5,11 +5,9 @@ L09: Some Folks Call It A Charades
 2022-04-26
 time spent: 1 hr
 */
-package celeb;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -199,6 +197,10 @@ public class StartPanel extends JPanel
     // Adds the RadioButtons to the group so only one can be selected.
     this.add(popRadio);
     typeGroup.add(popRadio);
+    this.add(startButton);
+    this.add(answerField);
+    this.add(clueField);
+    this.add(addCelebrityButton);
   }
 
   /**
