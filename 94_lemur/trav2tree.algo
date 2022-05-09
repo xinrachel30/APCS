@@ -1,0 +1,91 @@
+RachelHateCult :: May Qiu, Jeffery Tang, and Xinqing Lin
+APCS pd6
+HW94 -- reverse engineering
+2022-05-08
+time spent: 1 hr
+
+
+DISCO
+------------------------------------------------
+*
+================================================
+
+
+QCC
+------------------------------------------------
+* Reverse engineering is hard
+* Maybe we copied wrong but I saw two different ways to write post, so is there really only one?
+================================================
+
+
+HOW KEEN ARE YOUR POWERS OF OBSERVATION?
+------------------------------------------------
+Q: For a given binary tree, how many unique pre-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique in-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique post-order traversals are there?
+A: 1
+
+Q: For a given traversal, how many unique trees could have produced it?
+A: Given a pre-order traversal of length 2, there are 2 unique trees. Of length 3,
+   there are 4 unique trees. Of length 4, there are around 8 unique trees. Final answer: many
+
+Q: Given a pre-order traversal, what can you infer about its tree?
+A: The first character is the root. There are two sections in the remaining characters: one
+   for the left child and one for the right child.
+
+Q: Given a post-order traversal, what can you infer about its tree?
+A: The first character is the leftmost bottommost character in the tree. The last
+   is the rightmost bottommost character.
+
+Q: What does "1-to-1" mean?
+A: There are no repeating nodes in the tree and the traversal.
+
+Q: What does "onto" mean?
+A: If the traversal contains all nodes in the tree, and vice versa.
+
+================================================
+
+
+ALGO for PRE and IN
+------------------------------------------------
+givens: a pre and an in traversal
+
+procedure:
+1) write the first character in pre as the root
+2) separate the in order traversal into left and right children using the parent as the separator
+3) use the separated pre traversal to separate the in traversal
+3) repeat steps 1 and 2 for each of the left and right children
+
+================================================
+
+ALGO for PRE and POST
+------------------------------------------------
+givens: a pre and a post traversal
+
+procedure:
+1) write the first character in pre as the parent
+2) write the second to last character of post as the right child.  write the second character of pre
+   as the left child. use this to separate the pre traversal into left and right children.
+3) use the separated pre traversal to separate the post traversal
+4) repeat steps 1-3 for each of the left and right children
+
+================================================
+
+ALGO for IN and POST
+------------------------------------------------
+givens: an in and a post traversal
+
+procedure:
+1) write the last character in post as the parent
+2) separate the in order into left and right children using the parent from the post traversal.
+3) for each of the left and right children in post, the rightmost character is an immediate child. in the in,
+   the character to the left of the immediate child is the left child and the rightmost is the right child.
+4) repeat steps 1-3 for each of the left and right children
+
+================================================
+
+(replicate the algo section above as many times as necessary for distinct algos)
