@@ -1,0 +1,9 @@
+RachelHateCult: Xinqing Lin, Jeffery Tang, May Qiu
+APCS Pd 6
+HW95 -- Algorithm as Data Structure
+2022-05-09
+time spent: .8 hrs
+
+a perfect binary tree has even nodes
+at each level, a perfect binary tree has 2^depth nodes
+height of a complete binary tree w/ n nodes is log base 2 of n
