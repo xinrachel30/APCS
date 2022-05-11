@@ -192,14 +192,12 @@ public class BST
 
   public int numLeaves(TreeNode help, int ctr)
   {
-    if (help.getLeft() == null && help.getRight() == null) {
+    if (help == null) {
       return 1;
     }
     else {
-      ctr += numLeaves(help.getLeft(), ctr);
-      ctr += numLeaves(help.getRight(), ctr);
+      return numLeaves(help.getLeft(), ctr) + numLeaves(help.getRight(), ctr);
     }
-    return ctr;
   }
 
 
