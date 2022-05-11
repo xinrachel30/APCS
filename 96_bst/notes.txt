@@ -3,3 +3,9 @@ APCS Pd 6
 HW96 -- BSTs is the Perfect Place for Shade
 2022-05-10
 time spent: 1 hrs
+
+DISCO
+- We need to review basic recursion skills
+
+QCC
+- Adding SOP statements helps with debugging

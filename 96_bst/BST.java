@@ -147,7 +147,7 @@ public class BST
       search(target, padre.getRight());
     }
 
-    return null; //not sure
+    return null; 
   }
 
 
@@ -187,16 +187,19 @@ public class BST
    *****************************************************/
   public int numLeaves()
   {
-    return numLeaves(_root, 0);
+    return numLeaves(_root);
   }
 
-  public int numLeaves(TreeNode help, int ctr)
+  public int numLeaves(TreeNode help)
   {
     if (help == null) {
+      return 0;
+    }
+    if (help.getLeft() == null && help.getRight() == null) {
       return 1;
     }
     else {
-      return numLeaves(help.getLeft(), ctr) + numLeaves(help.getRight(), ctr);
+      return numLeaves(help.getLeft()) + numLeaves(help.getRight());
     }
   }
 
@@ -231,9 +234,9 @@ public class BST
 
     System.out.println( "\n-----------------------------");
 
-    System.out.println(arbol.height());
+    System.out.println("height: " + arbol.height());
 
-    System.out.println(arbol.numLeaves());
+    System.out.println("numLeaves: " + arbol.numLeaves());
     /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~if (target < _root)~~~~~~~~~~~~~~~*/
 
