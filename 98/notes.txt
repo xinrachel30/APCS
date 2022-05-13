@@ -1,0 +1,16 @@
+RachelHateCult: Xinqing Lin, Jeffery Tang, May Qiu
+APCS Pd 6
+HW MYSTERIOUS
+2022-05-12
+time spent: .3 hrs
+
+DISCO
+
+QCC
+What exactly does "smallest" mean?
+We think the highest priority is the smallest.
+
+To-Do List
+Overloaded add method- add elements to their proper place -> VIP: end of queue, Peasants -> front of queue.
+  This will probably be more efficient
+Remove-Remove last element

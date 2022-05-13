@@ -1,0 +1,12 @@
+RachelHateCult: Xinqing Lin, Jeffery Tang, May Qiu
+APCS Pd 6
+HW 99 -- Some Are More Equal Than Others, Codified
+2022-05-13
+time spent: .5 hrs
+
+DISCO
+-
+
+QCC
+- If we were to use Strings instead of ints as the values in the ArrayList, how would
+  we determine priority? How could we generalize our ArrayPriorityQueue?
