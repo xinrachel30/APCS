@@ -54,7 +54,13 @@ public class ArrayPriorityQueue implements PriorityQueue {
     //vip
     rollerblading.add(0);
 
+    //mas peasants
+    rollerblading.add(1);
+    rollerblading.add(1);
+
     //dequeing
+    System.out.println(rollerblading.removeMin());
+    System.out.println(rollerblading.removeMin());
     System.out.println(rollerblading.removeMin());
     System.out.println(rollerblading.removeMin());
     System.out.println(rollerblading.removeMin());
