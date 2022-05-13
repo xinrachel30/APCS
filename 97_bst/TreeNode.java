@@ -3,8 +3,15 @@ RachelHateCult: Xinqing Lin, Jeffery Tang, May Qiu
 APCS Pd 6
 HW97 -- Prune Your Trees
 2022-05-11
-time spent: 1 hrs
+time spent: 2 hrs
 /**
+
+DISCO
+* Finding the parent of the node that is to replace the removed node is more useful than the child node itself.
+
+QCC
+* We tried to use in-order traversal to find the values that could replace the node being replaced but the spaces in its output
+made it difficult to use.
 
 /**
  * class TreeNode

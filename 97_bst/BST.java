@@ -3,8 +3,15 @@ RachelHateCult: Xinqing Lin, Jeffery Tang, May Qiu
 APCS Pd 6
 HW97 -- Prune Your Trees
 2022-05-11
-time spent: 1 hrs
+time spent: 2 hrs
 /**
+
+DISCO
+* Finding the parent of the node that is to replace the removed node is more useful than the child node itself.
+
+QCC
+* We tried to use in-order traversal to find the values that could replace the node being replaced but the spaces in its output
+made it difficult to use.
 
 /**
  * class BST
@@ -241,47 +248,49 @@ public class BST
   public void remove(int tea) {
 
     if (tea == _root.getValue()) {
-      int root = _root.getValue();
-      String in = inOrderTravStr(_root);
-      String post = postOrderTravStr(_root);
-      int slightlybigger = Integer.parseInt(in.substring(in.indexOf(tea) + 2, in.indexOf(tea) + 3));
-      System.out.println(in);
-      System.out.println(slightlybigger);
-      int slightlysmaller = Integer.parseInt(in.substring(in.indexOf(tea) - 2, in.indexOf(tea) - 1));
-      System.out.println(slightlysmaller);
-      TreeNode parent;
-      if (tea - slightlysmaller > slightlybigger - tea) {
-        TreeNode newroot = search(slightlybigger);
-        newroot.setLeft(_root.getLeft());
-        newroot.setRight(_root.getRight());
-        parent = search(Integer.parseInt(post.substring(post.indexOf(slightlybigger) + 2, post.indexOf(slightlybigger) + 3)));
-        parent.setLeft(null);
+      TreeNode smaller = slightlysmaller(_root);
+      TreeNode bigger = slightlybigger(_root);
+      if (tea - smaller.getRight().getValue() > bigger.getLeft().getValue() - tea) {
+        _root.setValue(bigger.getLeft().getValue());
+        bigger.setLeft(null);
+
       }
       else {
-        TreeNode newroot = search(slightlysmaller);
-        newroot.setLeft(_root.getLeft());
-        newroot.setRight(_root.getRight());
-        parent = search(Integer.parseInt(post.substring(post.indexOf(slightlybigger) + 2, post.indexOf(slightlybigger) + 3)));
-        parent.setRight(null);
+        _root.setValue(smaller.getRight().getValue());
+        bigger.setRight(null);
       }
     }
 
   }
 
-  // public TreeNode slightlysmaller(TreeNode geoff) {
-  //   TreeNode reference = geoff.getLeft();
-  //   while (reference.getRight() != null) {
-  //     reference = reference.getRight();
+  public TreeNode slightlysmaller(TreeNode geoff) {
+    TreeNode reference = geoff.getLeft();
+    while (reference.getRight() != null && reference.getRight().getRight() != null) {
+      reference = reference.getRight();
+    }
+    return reference;
+  }
+
+  public TreeNode slightlybigger(TreeNode geoff) {
+    TreeNode reference = geoff.getRight();
+    while (reference.getLeft() != null && reference.getLeft().getLeft() != null) {
+      reference = reference.getLeft();
+    }
+    return reference;
+  }
+
+  // public TreeNode returnParent(TreeNode child, TreeNode current) {
+  //   if (current == child) {
+  //     return current;
   //   }
-  //   return reference;
-  // }
+  //   else if (current == null) {
+  //     return null;
+  //   }
+  //   else {
+  //     if (returnParent(child, current.left()) == null) {
   //
-  // public TreeNode slightlybigger(TreeNode geoff) {
-  //   TreeNode reference = geoff.getRight();
-  //   while (reference.getLeft() != null) {
-  //     reference = reference.getLeft();
+  //     }
   //   }
-  //   return reference;
   // }
   // TreeNode largest = slightlysmaller(_root);
   // TreeNode smallest = slightlybigger(_root);
