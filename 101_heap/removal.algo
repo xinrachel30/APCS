@@ -1,0 +1,10 @@
+RachelHateCult: Xinqing Lin, May Qiu, Jeffery Tang
+APCS
+HW101 -- Minheap
+2022-05-16
+time spent: .5 hrs
+
+1) Check if current level is complete using a counter and checking if it is equal to a power of 2 by the end.
+2) If it is complete move to the next level and repeat step 2 until the last complete level is reached
+3) If the last level is complete, traverse all the way to the right and set the rightmost node's right child to null.
+4) if the last level is incomplete, check for children of the previous level until one is equal to null and set the child before it to null

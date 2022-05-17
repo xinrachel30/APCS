@@ -1,0 +1,11 @@
+RachelHateCult: Xinqing Lin, May Qiu, Jeffery Tang
+APCS
+HW101 -- Minheap
+2022-05-16
+time spent: .5 hrs
+
+DISCO
+
+
+QCC
+What is the most efficient way of checking if a level in a tree is complete?

@@ -1,0 +1,11 @@
+RachelHateCult: Xinqing Lin, May Qiu, Jeffery Tang
+APCS
+HW101 -- Minheap
+2022-05-16
+time spent: .5 hrs
+
+1) If the input is less than the root, set it as the new root and set the previous root as the new root's left child
+2) Check if current level is complete using a counter and checking if it is equal to a power of 2 by the end.
+3) If it is complete move to the next level and repeat step 2 until the last complete level is reached
+4) If the last level is complete, traverse all the way to the left and set the leftmost node's left child to the input.
+5) if the last level is incomplete, check for children of the previous level until one is equal to null and set that child as the input
