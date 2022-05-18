@@ -21,7 +21,7 @@
 
 */
 
-//import java.util.NoSuchElementException;
+import java.util.NoSuchElementException;
 
 public class RunMed {
 
@@ -43,7 +43,7 @@ public class RunMed {
     }
 
     if (lilVals.peekMax() == null && bigVals.peekMin() == null) {
-      throw NoSuchElementException();
+      throw new NoSuchElementException();
     }
 
     if (lilVals.size() == bigVals.size()) {
