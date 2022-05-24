@@ -1,0 +1,15 @@
+/*
+NonViolencePeace :: Jeffery Tang, Xinqing Lin, May Qiu
+APCS pd 06
+HW105 -- 'Tis Hard to Search for 'Processing'
+2022-05-23
+time spent: .75 hr
+*/
+
+WHAT THIS DEMO SHOWS
+We drew squares, ellipses, and triangles as our cursor moved. The shading of the shapes can be changed from black
+to white if the user holds onto the left mousepad.
+
+WHY YOU CARE
+It can be a basic part of our final project, as these basic features can allow us to make shapes and utilize mouse
+movement and state.
